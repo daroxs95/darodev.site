@@ -36,7 +36,7 @@ export function getFirestoreInstance() {
 Now for abstraction (there is a core function missing here but bear with me):
 ```typescript
 // firebaseApp/db.ts
-// For almost all comunication we wil be using the shorthand collections from here
+// For almost all comunication we will be using the shorthand collections from here
 import {typedCollection} from 'firebaseApp/converters';
 
 export interface UserData {
