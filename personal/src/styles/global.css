@@ -9,3 +9,7 @@
 	padding: 20px;
 	max-width: 65ch;
 }
+
+video {
+	width: 100%;
+}
