@@ -83,7 +83,7 @@ export const typedCollection = <T>(collectionPath: string) =>
   collection(firestoreInstance, collectionPath).withConverter(genConverter<T>());
 ```
 
-The previous code is self explanatory can be easily (and it really needs to) extended, and as an example usage, cha cha cha chan... more abstractions:
+The previous code is self explanatory can be easily (and it really needs to) extended, and as an example usage, ta-daa! ... more abstractions:
 
 ```typescript
 // firebaseApp/users/usersData.ts
