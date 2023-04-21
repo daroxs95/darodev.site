@@ -1,6 +1,6 @@
 ---
 title: "Let's try email rendering in Next.js"
-description: "Some easy usage of Next.js, styled-components and SSR to leverage sending newsletters"
+description: "Next.js, styled-components and SSR to email templating and sending newsletters"
 pubDate: "April 13 2023"
 keywords: "nextjs, react, styled-components, email, SSR, html, nodemailer"
 heroImage: "/nextjs.jpg"
@@ -270,4 +270,4 @@ Note that:
 - In the email we can easily have a link redirecting to web page to render email correctly and easily, like a "could not view in correctly?, view in browser"
 
 
-And that should do it folks, happy coding folks, and Godspeed.😁
+And that should do it folks, happy coding and Godspeed.😁

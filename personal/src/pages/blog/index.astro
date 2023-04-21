@@ -5,6 +5,7 @@ import Footer from "../../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
+import Firebase from "../../components/Firebase.astro";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
@@ -14,7 +15,7 @@ const posts = (await getCollection("blog")).sort(
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <BaseHead keywords="" title={SITE_TITLE} description={SITE_DESCRIPTION} />
     <style>
       ul {
         list-style-type: none;
@@ -22,11 +23,14 @@ const posts = (await getCollection("blog")).sort(
       }
       ul li {
         display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
       }
       ul li :global(time) {
-        flex: 0 0 130px;
+        /* flex: 0 0 130px; */
         font-style: italic;
         color: #595959;
+        min-width: 130px;
       }
       ul li a:visited {
         color: #8e32dc;
@@ -52,5 +56,6 @@ const posts = (await getCollection("blog")).sort(
       </article>
     </main>
     <Footer />
+    <Firebase />
   </body>
 </html>
