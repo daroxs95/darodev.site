@@ -1,3 +1,10 @@
+# Daro's Wisdom
+
+## Project
+### Styles
+
+- Bg pattern from https://heropatterns.com/
+
 # Astro Starter Kit: Blog
 
 ```
