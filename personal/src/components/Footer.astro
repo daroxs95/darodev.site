@@ -1,14 +1,29 @@
 ---
 const today = new Date();
-import { MY_NAME } from '../consts';
+import { MY_NAME } from "../consts";
 ---
 
-<footer>
-	&copy; {today.getFullYear()} {MY_NAME}. Maybe some rights reserved.
+<footer class="vstack">
+  <div>
+    <a href="https://github.com/daroxs95" target="_blank" title="Github">
+      <i class="fa-brands fa-github font-icon-button"></i>
+    </a>
+  </div>
+  <div class="legal">
+    &copy; {today.getFullYear()}
+    {MY_NAME}. Maybe some rights reserved.
+  </div>
 </footer>
+
 <style>
-	footer {
-		padding: 25px;
-		text-align: center;
-	}
+  footer {
+    padding: 40px 25px;
+    text-align: center;
+  }
+  .vstack {
+    gap: 40px;
+  }
+  .font-icon-button {
+    font-size: 40px;
+  }
 </style>
