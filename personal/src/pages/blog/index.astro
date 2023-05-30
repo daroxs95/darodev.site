@@ -7,9 +7,9 @@ import { getCollection } from "astro:content";
 import Firebase from "../../components/Firebase.astro";
 import BlogCard from "../../components/BlogCard.astro";
 
-const posts = (await getCollection("blog")).sort(
-  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
-);
+const posts = (await getCollection("blog"))
+  .filter((post) => import.meta.env.DEV || !post.data.draft)
+  .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
 ---
 
 <!DOCTYPE html>
@@ -41,18 +41,17 @@ const posts = (await getCollection("blog")).sort(
     </main>
     <Footer />
     <Firebase />
+    <style>
+      .blogsList {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: calc(4 * var(--h-gap)) 0;
+      }
+      .blogsList li {
+        list-style: none;
+      }
+    </style>
   </body>
 </html>
-
-<style>
-  .blogsList {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: calc(4 * var(--h-gap)) 0;
-  }
-  .blogsList li {
-    list-style: none;
-  }
-</style>
