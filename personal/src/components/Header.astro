@@ -4,13 +4,13 @@ import { SITE_TITLE } from "../consts";
 ---
 
 <header class="main-content">
-  <h2>
-    {SITE_TITLE}
-  </h2>
-  <nav>
+  <nav class="f-ai-end">
+    <h2 class="f-ai-center">
+      {SITE_TITLE}
+    </h2>
     <HeaderLink href="/">
       <!-- <span class="material-symbols-outlined"> in_home_mode</span> -->
-			Home
+      Home
     </HeaderLink>
     <HeaderLink href="/blog">Blog</HeaderLink>
     <HeaderLink href="/about">About</HeaderLink>
@@ -22,14 +22,16 @@ import { SITE_TITLE } from "../consts";
     padding: 2em 0 !important;
   }
   h2 {
-    margin: 0.5em 0;
+    margin: 0 var(--h-gap);
+    padding-bottom: 0;
+    min-height: var(--h-non-text-line);
   }
   nav {
     justify-content: flex-start;
     gap: 30px;
   }
 
-	span {
-		margin: auto 0;
-	}
+  span {
+    margin: auto 0;
+  }
 </style>
