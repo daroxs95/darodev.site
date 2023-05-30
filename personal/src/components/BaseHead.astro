@@ -1,7 +1,17 @@
 ---
-// Import the global.css file here so that it is included on
-// all pages through the use of the <BaseHead /> component.
+// DECSS usage
+import "../../decss/reset.css";
+import "../../decss/components.css";
+import "../../decss/components/article.css";
+import "../../decss/components/details.css";
+import "../../decss/components/code.css";
+import "../../decss/animations.css";
+import "../../decss/scrollbar.css";
+import "../../decss/theme.css";
+import "../../decss/font.css";
+import "../../decss/font/spaced.css";
 import "../styles/global.css";
+import "../styles/fonts.css";
 
 export interface Props {
   title: string;
@@ -50,7 +60,7 @@ const {
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
 <!-- Pico css -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"> -->
 <!-- Font -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

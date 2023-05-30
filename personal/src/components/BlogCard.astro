@@ -1,0 +1,54 @@
+---
+import FormattedDate from "./FormattedDate.astro";
+
+export interface Props {
+  title: string;
+  description?: string;
+  date: Date;
+  image?: string;
+  url?: string;
+}
+
+const {
+  title,
+  image = "/placeholder-about.jpg",
+  date,
+  url,
+} = Astro.props;
+---
+
+<div class="vstack bcard">
+  <a href={url} class="cardImageAnchor">
+    <img src={image} />
+  </a>
+  <div>
+    <a href={url}>{title}</a>
+    <br />
+    <FormattedDate date={date} />
+  </div>
+</div>
+
+<style>
+  footer {
+    padding: 25px;
+    text-align: center;
+  }
+  img {
+    border-radius: 5px;
+    object-fit: cover;
+    object-position: center center;
+    height: 150px;
+    width: 230px;
+    filter: grayscale(100%);
+  }
+  .bcard a {
+    padding: 0;
+    color: var(--color-text);
+  }
+  .bcard {
+    width: min-content;
+  }
+  .cardImageAnchor:hover > img {
+    filter: grayscale(0%);
+  }
+</style>
