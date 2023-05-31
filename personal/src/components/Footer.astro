@@ -1,12 +1,15 @@
 ---
 const today = new Date();
-import { MY_NAME } from "../consts";
+import { MY_NAME, PERSONAL_GITHUB, PERSONAL_LINKEDIN } from "../consts";
 ---
 
 <footer class="vstack">
-  <div>
-    <a href="https://github.com/daroxs95" target="_blank" title="Github">
+  <div class="hstack f-jc-center">
+    <a href={PERSONAL_GITHUB} target="_blank" title="Github">
       <i class="fa-brands fa-github font-icon-button"></i>
+    </a>
+    <a href={PERSONAL_LINKEDIN} target="_blank" title="LinkedIn">
+      <i class="fa-brands fa-linkedin font-icon-button"></i>
     </a>
   </div>
   <div class="legal">
@@ -19,9 +22,6 @@ import { MY_NAME } from "../consts";
   footer {
     padding: 40px 25px;
     text-align: center;
-  }
-  .vstack {
-    gap: 40px;
   }
   .font-icon-button {
     font-size: 40px;
