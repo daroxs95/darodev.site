@@ -4,18 +4,22 @@ import { SITE_TITLE } from "../consts";
 ---
 
 <header class="main-content">
-  <nav class="f-ai-end">
-    <h2 class="f-ai-center">
-      {SITE_TITLE}
-    </h2>
-    <HeaderLink href="/">
-      <!-- <span class="material-symbols-outlined"> in_home_mode</span> -->
-      Home
-    </HeaderLink>
-    <HeaderLink href="/blog">Blog</HeaderLink>
-    <HeaderLink href="/product">Products</HeaderLink>
-    <HeaderLink href="/about">About</HeaderLink>
-    <!-- <HeaderLink href="https://twitter.com/astrodotbuild" target="_blank">Twitter</HeaderLink> -->
+  <nav class="f-ai-end f-jc-start p-0">
+    <div class="hstack m-0">
+      <h2 class="f-ai-center p-def">
+        {SITE_TITLE}
+      </h2>
+    </div>
+    <div class="hstack p-def f-jc-start m-0">
+      <HeaderLink href="/">
+        <!-- <span class="material-symbols-outlined"> in_home_mode</span> -->
+        Home
+      </HeaderLink>
+      <HeaderLink href="/blog">Blog</HeaderLink>
+      <HeaderLink href="/product">Products</HeaderLink>
+      <HeaderLink href="/about">About</HeaderLink>
+      <!-- <HeaderLink href="https://twitter.com/astrodotbuild" target="_blank">Twitter</HeaderLink> -->
+    </div>
   </nav>
 </header>
 <style>
@@ -25,14 +29,8 @@ import { SITE_TITLE } from "../consts";
   h2 {
     margin: 0 var(--h-gap);
     padding-bottom: 0;
-    min-height: var(--h-non-text-line);
   }
-  nav {
-    justify-content: flex-start;
-    gap: 30px;
-  }
-
-  span {
-    margin: auto 0;
+  .links {
+    gap: var(--h-gap);
   }
 </style>
