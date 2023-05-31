@@ -7,6 +7,8 @@ export interface Props {
   date: Date;
   image?: string;
   url?: string;
+  vertical?: boolean;
+  externUrl?: boolean;
 }
 
 const {
@@ -14,16 +16,29 @@ const {
   image = "/placeholder-about.jpg",
   date,
   url,
+  vertical = false,
+  description,
+  externUrl,
 } = Astro.props;
 ---
 
-<div class="vstack bcard">
-  <a href={url} class="cardImageAnchor">
+<div
+  class:list={[
+    "bcard",
+    vertical ? "vstack w-min-content" : "hstack f-wrap",
+  ]}
+>
+  <a
+    href={url}
+    class:list={["card-image-anchor", !url && "no-pointer"]}
+    target={externUrl ? "_blank" : undefined}
+  >
     <img src={image} />
   </a>
   <div>
     <a href={url}>{title}</a>
     <br />
+    {description && <p class="description">{description}</p>}
     <FormattedDate date={date} />
   </div>
 </div>
@@ -45,10 +60,13 @@ const {
     padding: 0;
     color: var(--color-text);
   }
-  .bcard {
-    width: min-content;
+  .bcard .description{
+    max-width: 500px;
   }
-  .cardImageAnchor:hover > img {
+  .card-image-anchor:hover > img {
     filter: grayscale(0%);
+  }
+  .no-pointer {
+    cursor: default !important;
   }
 </style>

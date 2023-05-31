@@ -2,12 +2,12 @@
 import BaseHead from "../../components/BaseHead.astro";
 import Navbar from "../../components/Navbar.astro";
 import Footer from "../../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import { SITE_TITLE, PRODUCTS_PAGE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 import Firebase from "../../components/Firebase.astro";
 import BlogCard from "../../components/BlogCard.astro";
 
-const posts = (await getCollection("blog"))
+const products = (await getCollection("product"))
   .filter((post) => import.meta.env.DEV || !post.data.draft)
   .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
 ---
@@ -15,7 +15,11 @@ const posts = (await getCollection("blog"))
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <BaseHead keywords="" title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <BaseHead
+      keywords=""
+      title={`${SITE_TITLE} | Products`}
+      description={PRODUCTS_PAGE_DESCRIPTION}
+    />
   </head>
   <body>
     <Navbar />
@@ -24,14 +28,19 @@ const posts = (await getCollection("blog"))
         <!-- <section> -->
         <ul class="blogsList">
           {
-            posts.map((post) => (
+            products.map((product) => (
               <li>
                 <BlogCard
-                  vertical
-                  date={post.data.pubDate}
-                  title={post.data.title}
-                  image={post.data.heroImage}
-                  url={`/blog/${post.slug}/`}
+                  date={product.data.pubDate}
+                  title={product.data.title}
+                  image={product.data.heroImage}
+                  url={
+                    product.data.showDetailPage
+                      ? `/product/${product.slug}/`
+                      : product.data.web
+                  }
+                  externUrl={!product.data.showDetailPage}
+                  description={product.data.description}
                 />
               </li>
             ))
@@ -45,7 +54,7 @@ const posts = (await getCollection("blog"))
     <style>
       .blogsList {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         flex-wrap: wrap;
         gap: 20px;
         padding: calc(4 * var(--h-gap)) 0;

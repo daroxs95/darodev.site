@@ -1,6 +1,6 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
+import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Firebase from "../components/Firebase.astro";
@@ -12,7 +12,7 @@ import Firebase from "../components/Firebase.astro";
     <BaseHead keywords="" title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
-    <Header title={SITE_TITLE} />
+    <Navbar title={SITE_TITLE} />
     <main class="main-content">
       <article class="article-content">
         <h1>👻 Greetings to the fellow geeks</h1>
@@ -24,14 +24,14 @@ import Firebase from "../components/Firebase.astro";
 
         <p>Here are a few topics I probably would be writing about:</p>
         <ul>
-          <li>Web development, mostly react 😒. Yeah, i know, i know ...</li>
-          <li>Videogames, of course.</li>
-          <li>Graphics programming, I really hope.</li>
-          <li>Software engineering.</li>
-          <li>Automation for really lazy people like me</li>
+          <li>🕸️ Web development, mostly react 😒. Yeah, i know, i know ...</li>
+          <li>🕹️ Videogames, of course.</li>
+          <li>⚙️ Graphics programming, I really hope.</li>
+          <li>🐢 Software engineering.</li>
+          <li>🦥 Automation for really lazy people like me</li>
+          <li>👽 Pet proyects(mostly related with previous point)</li>
         </ul>
-        <p>And a lot more 😶‍🌫️.</p>
-        <p>Who am I kidding, probably this will be only web deb stuff.</p>
+        <p>And a lot more 😶‍🌫️. I hope.</p>
       </article>
     </main>
     <Footer />
