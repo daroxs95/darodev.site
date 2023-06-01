@@ -1,15 +1,6 @@
 ---
 // DECSS usage
-import "../../decss/reset.css";
-import "../../decss/components.css";
-import "../../decss/components/article.css";
-import "../../decss/components/details.css";
-import "../../decss/components/button.css";
-import "../../decss/components/code.css";
-import "../../decss/animations.css";
-import "../../decss/scrollbar.css";
-import "../../decss/theme.css";
-import "../../decss/font.css";
+import "../../decss/utils/allStyles";
 import "../../decss/font/spaced.css";
 import "../styles/global.css";
 import "../styles/fonts.css";
@@ -27,7 +18,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const {
   title,
   description,
-  image = "/placeholder-about.jpg",
+  image = "/mystack.png",
   keywords,
 } = Astro.props;
 ---
