@@ -23,20 +23,17 @@ const {
 ---
 
 <div
-  class:list={[
-    "bcard",
-    vertical ? "vstack w-min-content" : "hstack f-wrap",
-  ]}
+  class:list={["bcard", vertical ? "vstack w-min-content" : "hstack f-wrap"]}
 >
   <a
     href={url}
-    class:list={["card-image-anchor", !url && "no-pointer"]}
+    class:list={["card-image-anchor p-0", !url && "no-pointer"]}
     target={externUrl ? "_blank" : undefined}
   >
     <img src={image} />
   </a>
   <div>
-    <a href={url}>{title}</a>
+    <a class="p-0" href={url}>{title}</a>
     <br />
     {description && <p class="description">{description}</p>}
     <FormattedDate date={date} />
@@ -56,11 +53,10 @@ const {
     width: 300px;
     filter: grayscale(100%);
   }
-  .bcard a {
-    padding: 0;
+  .bcard a, .bcard a:visited {
     color: var(--color-text);
   }
-  .bcard .description{
+  .bcard .description {
     max-width: 500px;
   }
   .card-image-anchor:hover > img {

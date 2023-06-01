@@ -1,58 +1,47 @@
 ---
-import BaseHead from "../../components/BaseHead.astro";
-import Navbar from "../../components/Navbar.astro";
-import Footer from "../../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
-import Firebase from "../../components/Firebase.astro";
 import BlogCard from "../../components/BlogCard.astro";
+import Base from "../../layouts/Base.astro";
 
 const posts = (await getCollection("blog"))
   .filter((post) => import.meta.env.DEV || !post.data.draft)
   .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <BaseHead keywords="" title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body>
-    <Navbar />
-    <main class="main-content">
-      <article>
-        <!-- <section> -->
-        <ul class="blogsList">
-          {
-            posts.map((post) => (
-              <li>
-                <BlogCard
-                  vertical
-                  date={post.data.pubDate}
-                  title={post.data.title}
-                  image={post.data.heroImage}
-                  url={`/blog/${post.slug}/`}
-                />
-              </li>
-            ))
-          }
-        </ul>
-        <!-- </section> -->
-      </article>
-    </main>
-    <Footer />
-    <Firebase />
-    <style>
-      .blogsList {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 20px;
-        padding: calc(4 * var(--h-gap)) 0;
-      }
-      .blogsList li {
-        list-style: none;
-      }
-    </style>
-  </body>
-</html>
+<Base keywords="" title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <main class="main-content">
+    <article>
+      <!-- <section> -->
+      <ul class="blogsList">
+        {
+          posts.map((post) => (
+            <li>
+              <BlogCard
+                vertical
+                date={post.data.pubDate}
+                title={post.data.title}
+                image={post.data.heroImage}
+                url={`/blog/${post.slug}/`}
+              />
+            </li>
+          ))
+        }
+      </ul>
+      <!-- </section> -->
+    </article>
+  </main>
+</Base>
+
+<style>
+  .blogsList {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: calc(4 * var(--h-gap)) 0;
+  }
+  .blogsList li {
+    list-style: none;
+  }
+</style>

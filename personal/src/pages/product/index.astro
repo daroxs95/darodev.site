@@ -6,62 +6,55 @@ import { SITE_TITLE, PRODUCTS_PAGE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 import Firebase from "../../components/Firebase.astro";
 import BlogCard from "../../components/BlogCard.astro";
+import Base from "../../layouts/Base.astro";
 
 const products = (await getCollection("product"))
   .filter((post) => import.meta.env.DEV || !post.data.draft)
   .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <BaseHead
-      keywords=""
-      title={`${SITE_TITLE} | Products`}
-      description={PRODUCTS_PAGE_DESCRIPTION}
-    />
-  </head>
-  <body>
-    <Navbar />
-    <main class="main-content">
-      <article>
-        <!-- <section> -->
-        <ul class="blogsList">
-          {
-            products.map((product) => (
-              <li>
-                <BlogCard
-                  date={product.data.pubDate}
-                  title={product.data.title}
-                  image={product.data.heroImage}
-                  url={
-                    product.data.showDetailPage
-                      ? `/product/${product.slug}/`
-                      : product.data.web
-                  }
-                  externUrl={!product.data.showDetailPage}
-                  description={product.data.description}
-                />
-              </li>
-            ))
-          }
-        </ul>
-        <!-- </section> -->
-      </article>
-    </main>
-    <Footer />
-    <Firebase />
-    <style>
-      .blogsList {
-        display: flex;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        gap: 20px;
-        padding: calc(4 * var(--h-gap)) 0;
-      }
-      .blogsList li {
-        list-style: none;
-      }
-    </style>
-  </body>
-</html>
+<Base
+  keywords=""
+  title={`${SITE_TITLE} | Products`}
+  description={PRODUCTS_PAGE_DESCRIPTION}
+>
+  <main class="main-content">
+    <article>
+      <!-- <section> -->
+      <ul class="blogsList">
+        {
+          products.map((product) => (
+            <li>
+              <BlogCard
+                date={product.data.pubDate}
+                title={product.data.title}
+                image={product.data.heroImage}
+                url={
+                  product.data.showDetailPage
+                    ? `/product/${product.slug}/`
+                    : product.data.web
+                }
+                externUrl={!product.data.showDetailPage}
+                description={product.data.description}
+              />
+            </li>
+          ))
+        }
+      </ul>
+      <!-- </section> -->
+    </article>
+  </main>
+</Base>
+
+<style>
+  .blogsList {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: calc(4 * var(--h-gap)) 0;
+  }
+  .blogsList li {
+    list-style: none;
+  }
+</style>
