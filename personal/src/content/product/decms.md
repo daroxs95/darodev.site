@@ -1,5 +1,5 @@
 ---
-title: "Automatic CMS
+title: "Automatic CMS"
 description: "Configurable automatic CMS, opinionated and bring your own backend project"
 pubDate: "April 04 2023"
 keywords: "cms, api, rest, javascript"
