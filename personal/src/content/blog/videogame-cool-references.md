@@ -18,9 +18,9 @@ This here is a non curated list of the last cool references or random stuff in v
 
 # Outlast
 
-- Wtaf means, `This is what the game is` note, the maths there are plain wrong. There is being used some summation method like zeta function regularization or Ramanujan summation on the divergent series, but is not explained anywhere, so is misleading AF for non-mathematicians.
+- What means, `This is what the game is` note, the math there is plain wrong. There is being used some summation method like zeta function regularization or Ramanujan summation on the divergent series, but is not explained anywhere, so is misleading AF for non-mathematicians.
  <video src="/Outlast 2021-10-23 13-54-19.mp4" controls></video>
-- The formulae for Morphogenic engine is kinda weird, I can't recall if it can be found on some specific math problem or if just made up stuff, either way seems a little simple for such an incredible complex artifact. Although it is really cool.
+- The formulae for Morphogenic engine is a little weird, I can't recall if it can be found on some specific math problem or if just made up stuff, either way seems a little simple for such an incredible complex artifact. Although it is really cool.
  <video src="/Outlast 2021-10-15 17-35-00.mp4" controls></video>
 
 # STALKER Shadow of Chernobyl
