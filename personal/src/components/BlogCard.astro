@@ -1,6 +1,5 @@
 ---
 import FormattedDate from "./FormattedDate.astro";
-
 export interface Props {
   title: string;
   description?: string;
@@ -23,7 +22,7 @@ const {
 ---
 
 <div
-  class:list={["bcard", vertical ? "vstack w-min-content" : "hstack f-wrap"]}
+  class:list={["bcard comeFromBelow", vertical ? "vstack w-min-content" : "hstack f-wrap"]}
 >
   <a
     href={url}
@@ -52,8 +51,10 @@ const {
     height: 200px;
     width: 300px;
     filter: grayscale(100%);
+    transition: filter 0.2s;
   }
-  .bcard a, .bcard a:visited {
+  .bcard a,
+  .bcard a:visited {
     color: var(--color-text);
   }
   .bcard .description {

@@ -6,17 +6,15 @@ import { SITE_TITLE } from "../consts";
 <header class="main-content">
   <nav class="f-ai-end f-jc-start p-0">
     <div class="hstack m-0">
-      <h2 class="f-ai-center p-def">
-        {SITE_TITLE}
-      </h2>
+      <HeaderLink class="home-link" href="/">
+        <h2 class="f-ai-center p-def">
+          {SITE_TITLE}
+        </h2>
+      </HeaderLink>
     </div>
     <div class="hstack p-def f-jc-start m-0">
-      <HeaderLink href="/">
-        <!-- <span class="material-symbols-outlined"> in_home_mode</span> -->
-        Home
-      </HeaderLink>
       <HeaderLink href="/blog">Blog</HeaderLink>
-      <HeaderLink href="/product">Products</HeaderLink>
+      <HeaderLink href="/product">Portfolio</HeaderLink>
       <HeaderLink href="/about">About</HeaderLink>
       <!-- <HeaderLink href="https://twitter.com/astrodotbuild" target="_blank">Twitter</HeaderLink> -->
     </div>
@@ -32,5 +30,9 @@ import { SITE_TITLE } from "../consts";
   }
   .links {
     gap: var(--h-gap);
+  }
+  .home-link {
+    color: var(--color-text) !important;
+    text-decoration: none;
   }
 </style>

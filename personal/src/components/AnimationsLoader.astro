@@ -1,0 +1,29 @@
+<style is:global>
+  .comeFromBelow {
+    transform: translateY(-1000);
+    opacity: 0;
+  }
+</style>
+
+<script>
+  import anime from "animejs";
+
+  var tl = anime.timeline({
+    easing: "easeInOutSine",
+    duration: 250,
+  });
+
+  tl.add({
+    targets: ".comeFromBelow",
+    translateY: [70, 0],
+    opacity: [0, 1],
+    delay: anime.stagger(50),
+  });
+
+  tl.add({
+    targets: "#techstackify li",
+    translateY: [70, 0],
+    opacity: [0, 1],
+    delay: anime.stagger(5),
+  });
+</script>

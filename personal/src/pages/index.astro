@@ -1,28 +1,73 @@
 ---
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { SITE_TITLE, PRODUCTS_PAGE_DESCRIPTION } from "../consts";
+import { getCollection } from "astro:content";
+import BlogCard from "../components/BlogCard.astro";
 import Base from "../layouts/Base.astro";
+
+const posts = (await getCollection("blog"))
+  .filter((post) => import.meta.env.DEV || !post.data.draft)
+  .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
+const products = (await getCollection("product"))
+  .filter((post) => import.meta.env.DEV || !post.data.draft)
+  .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
 ---
 
-<Base keywords="" title={SITE_TITLE} description={SITE_DESCRIPTION}>
+<Base
+  keywords=""
+  title={`${SITE_TITLE} | Products`}
+  description={PRODUCTS_PAGE_DESCRIPTION}
+>
   <main class="main-content">
-    <article class="article-content">
-      <h1>👻 Greetings to the fellow geeks</h1>
-      <p>Welcome to my official mental dump.</p>
-      <p>
-        I am a really busy person, so this site can be a little too quiet from
-        time to time.
-      </p>
-
-      <p>Here are a few topics I probably would be writing about:</p>
-      <ul>
-        <li>🕸️ Web development, mostly react 😒. Yeah, i know, i know ...</li>
-        <li>🕹️ Videogames, of course.</li>
-        <li>⚙️ Graphics programming, I really hope.</li>
-        <li>🐢 Software engineering.</li>
-        <li>🦥 Automation for really lazy people like me</li>
-        <li>👽 Pet proyects(mostly related with previous point)</li>
+    <article>
+      <!-- <section> -->
+      <ul class="blogsList">
+        {
+          posts.map((post) => (
+            <li>
+              <BlogCard
+                vertical
+                date={post.data.pubDate}
+                title={post.data.title}
+                image={post.data.heroImage}
+                url={`/blog/${post.slug}/`}
+              />
+            </li>
+          ))
+        }
+        {
+          products.map((product) => (
+            <li>
+              <BlogCard
+                vertical
+                date={product.data.pubDate}
+                title={product.data.title}
+                image={product.data.heroImage}
+                url={
+                  product.data.showDetailPage
+                    ? `/product/${product.slug}/`
+                    : product.data.web
+                }
+                externUrl={!product.data.showDetailPage}
+                description={product.data.description}
+              />
+            </li>
+          ))
+        }
       </ul>
-      <p>And a lot more 😶‍🌫️. I hope.</p>
+      <!-- </section> -->
     </article>
   </main>
 </Base>
+
+<style>
+  .blogsList {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: calc(4 * var(--h-gap)) 0;
+  }
+  .blogsList li {
+    list-style: none;
+  }
+</style>

@@ -114,6 +114,7 @@ export async function updateUserData(user: User | null, data: UserData | null) {
 
 
 ```
+⚠️ A important note is this implementation does not play well with `firebase-admin` lib and even less if client an server libs ar mixed.
 
  So now all operations using the abstracted `db` will be typed and nice to use everywhere. Happy coding folks, and Godspeed.😁
 

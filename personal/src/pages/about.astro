@@ -1,20 +1,51 @@
 ---
-import Layout from '../layouts/BlogPost.astro';
+import MyStack from "../components/MyStack.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import Base from "../layouts/Base.astro";
 ---
 
-<Layout
-	keywords=""
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
-	updatedDate={new Date('August 08 2022')}
-	heroImage="/placeholder-about.jpg"
->
-	<p>
-		I probably should start to take more photos and regularly make backups 🫠.
-	</p>
-	<p>
-		Anyways, that's me, in the corner, in the spotlight, losing my religion 😁.
-	</p>
+<Base keywords="" title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <main class="main-content">
+    <div class="about-content-wrapper comeFromBelow f-jc-center f-wrap">
+      <img src="/placeholder-about.jpg" width="350" height="500" />
+      <article class="about-content">
+        <h1>👻 Greetings to the fellow geeks</h1>
+        <p>
+          I'm Darián López, A mathematician turned sofware developer, the
+          ultimate combo 😅.
+        </p>
+        <p>Welcome to my official mental dump.</p>
 
-</Layout>
+        <p>
+          Here are a few topics that interests me and probably will be writing
+          about:
+        </p>
+        <ul>
+          <li>🕸️ Web development, mostly react 👽. Yeah, i know, i know ...</li>
+          <li>🕹️ Videogames, of course.</li>
+          <li>⚙️ Graphics programming, I really hope.</li>
+          <li>🐢 Software engineering.</li>
+          <li>🦥 Automation for really lazy people like me</li>
+        </ul>
+      </article>
+    </div>
+    <MyStack />
+  </main>
+</Base>
+
+<style>
+  .about-content-wrapper {
+    gap: 20px;
+  }
+  img {
+    /* margin-bottom: auto; */
+    margin-top: 20px;
+    object-fit: cover;
+    width: min(350px, 90%);
+    border-radius: var(--border-radius);
+  }
+  .about-content {
+    max-width: 600px;
+    width: 100%;
+  }
+</style>
