@@ -8,6 +8,7 @@ export interface Props {
   url?: string;
   vertical?: boolean;
   externUrl?: boolean;
+  type?: "blog-post" | "app";
 }
 
 const {
@@ -18,11 +19,15 @@ const {
   vertical = false,
   description,
   externUrl,
+  type,
 } = Astro.props;
 ---
 
 <div
-  class:list={["bcard comeFromBelow", vertical ? "vstack w-min-content" : "hstack f-wrap"]}
+  class:list={[
+    "bcard comeFromBelow",
+    vertical ? "vstack w-min-content" : "hstack f-wrap",
+  ]}
 >
   <a
     href={url}
@@ -32,7 +37,11 @@ const {
     <img src={image} />
   </a>
   <div>
-    <a class="p-0" href={url}>{title}</a>
+    <a class="p-0" href={url}>
+      {type === "blog-post" && <i class="fa fa-pencil-square-o card-type" title="Blog post" />}
+      {type === "app" && <i class="fa fa-rocket card-type" title="App" />}
+      {title}</a
+    >
     <br />
     {description && <p class="description">{description}</p>}
     <FormattedDate date={date} />
@@ -65,5 +74,10 @@ const {
   }
   .no-pointer {
     cursor: default !important;
+  }
+
+  .card-type {
+    font-size: 0.8rem;
+    margin-right: 2px;
   }
 </style>

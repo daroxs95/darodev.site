@@ -30,6 +30,7 @@ const products = (await getCollection("product"))
                 title={post.data.title}
                 image={post.data.heroImage}
                 url={`/blog/${post.slug}/`}
+                type="blog-post"
               />
             </li>
           ))
@@ -49,6 +50,7 @@ const products = (await getCollection("product"))
                 }
                 externUrl={!product.data.showDetailPage}
                 description={product.data.description}
+                type="app"
               />
             </li>
           ))
