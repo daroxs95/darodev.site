@@ -6,7 +6,7 @@ keywords: "c, cplusplus, c++, clang, programming, javascript, web, learning, pyt
 heroImage: "/cpp-c-js-py.png"
 ---
 
-Not so long ago, someone ask me what would be the best way of learning to code, and the wich programming language to choose.
+Not so long ago, someone ask me what would be the best way of learning to code, and the which programming language to choose.
 I was just some programmer wannabe at the moment, but having a passion for code and maths,
 and having learned mostly by physical books of the c programming language and no computer whatsoever,
 I immediately thought, "Man I would want to start in the exact same way" 😅.
