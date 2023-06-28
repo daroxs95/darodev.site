@@ -6,10 +6,10 @@ import Base from "../layouts/Base.astro";
 
 const posts = (await getCollection("blog"))
   .filter((post) => import.meta.env.DEV || !post.data.draft)
-  .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 const products = (await getCollection("product"))
   .filter((post) => import.meta.env.DEV || !post.data.draft)
-  .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
 <Base
