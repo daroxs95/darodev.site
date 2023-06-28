@@ -13,7 +13,7 @@ const posts = (await getCollection("blog"))
   <main class="main-content">
     <article>
       <!-- <section> -->
-      <ul class="blogsList">
+      <ul class="blogsList f-jc-center f-wrap">
         {
           posts.map((post) => (
             <li>
@@ -23,6 +23,7 @@ const posts = (await getCollection("blog"))
                 title={post.data.title}
                 image={post.data.heroImage}
                 url={`/blog/${post.slug}/`}
+                draft={post.data.draft}
               />
             </li>
           ))
@@ -35,9 +36,6 @@ const posts = (await getCollection("blog"))
 
 <style>
   .blogsList {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
     gap: 20px;
     padding: calc(4 * var(--h-gap)) 0;
   }

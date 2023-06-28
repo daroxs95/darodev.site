@@ -8,6 +8,7 @@ export interface Props {
   url?: string;
   vertical?: boolean;
   externUrl?: boolean;
+  draft?: boolean;
   type?: "blog-post" | "app";
 }
 
@@ -20,6 +21,7 @@ const {
   description,
   externUrl,
   type,
+  draft,
 } = Astro.props;
 ---
 
@@ -37,11 +39,16 @@ const {
     <img src={image} />
   </a>
   <div>
-    <a class="p-0" href={url}>
-      {type === "blog-post" && <i class="fa fa-pencil-square-o card-type" title="Blog post" />}
+    <a data-transition-page-link class="p-0" href={url}>
+      {
+        type === "blog-post" && (
+          <i class="fa fa-pencil-square-o card-type" title="Blog post" />
+        )
+      }
       {type === "app" && <i class="fa fa-rocket card-type" title="App" />}
       {title}</a
     >
+    {draft && <span class="text-c-unfocus">DRAFT</span>}
     <br />
     {description && <p class="description">{description}</p>}
     <FormattedDate date={date} />

@@ -36,6 +36,7 @@ const products = (await getCollection("product"))
                 }
                 externUrl={!product.data.showDetailPage}
                 description={product.data.description}
+                draft={product.data.draft}
               />
             </li>
           ))

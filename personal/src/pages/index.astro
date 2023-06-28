@@ -14,13 +14,13 @@ const products = (await getCollection("product"))
 
 <Base
   keywords=""
-  title={`${SITE_TITLE} | Products`}
+  title={`${SITE_TITLE} | Summary`}
   description={PRODUCTS_PAGE_DESCRIPTION}
 >
   <main class="main-content">
     <article>
       <!-- <section> -->
-      <ul class="blogsList">
+      <ul class="blogsList f-jc-center f-wrap">
         {
           posts.map((post) => (
             <li>
@@ -31,6 +31,7 @@ const products = (await getCollection("product"))
                 image={post.data.heroImage}
                 url={`/blog/${post.slug}/`}
                 type="blog-post"
+                draft={post.data.draft}
               />
             </li>
           ))
@@ -49,8 +50,9 @@ const products = (await getCollection("product"))
                     : product.data.web
                 }
                 externUrl={!product.data.showDetailPage}
-                description={product.data.description}
+                description=""
                 type="app"
+                draft={product.data.draft}
               />
             </li>
           ))
@@ -63,9 +65,6 @@ const products = (await getCollection("product"))
 
 <style>
   .blogsList {
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
     gap: 20px;
     padding: calc(4 * var(--h-gap)) 0;
   }
