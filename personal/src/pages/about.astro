@@ -8,14 +8,28 @@ import Base from "../layouts/Base.astro";
 <Base keywords="" title={SITE_TITLE} description={SITE_DESCRIPTION}>
   <main class="main-content">
     <div class="about-content-wrapper comeFromBelow f-jc-center f-wrap">
-      <img src="/placeholder-about.jpg" width="350" height="500" />
       <article class="about-content">
+        <img
+          class="m-def"
+          src="/placeholder-about.jpg"
+          width="350"
+          height="500"
+        />
         <h1>👻 Greetings to the fellow geeks</h1>
         <p>
-          I'm Darián López, A mathematician turned software developer, the
-          ultimate combo 😅.
+          Hi, I'm Darián López, A mathematician turned software developer 😎.
         </p>
-        <p>Welcome to my official mental dump.</p>
+        <p>
+          Currently working on continuous learning and having no "zero days".
+          Most of my professional experience comes from software development and
+          technical lead in the most diverse sectors, focused on web
+          development.
+        </p>
+        <p>
+          Fancied of music, simplicity and beaty of applied maths, and videogames.
+          I find that high level languages/tools and the low level counterpart complements each other,
+          and the journey to mastering something involves getting things done and "reinvent the wheel" in equal parts.
+        </p>
 
         <p>
           Here are a few topics that interests me and probably will be writing
@@ -24,7 +38,7 @@ import Base from "../layouts/Base.astro";
         <ul>
           <li>🕸️ Web development, mostly react 👽. Yeah, i know, i know ...</li>
           <li>🕹️ Videogames, of course.</li>
-          <li>⚙️ Graphics programming, I really hope.</li>
+          <li>⚙️ Graphics programming. (Game engine I really hope 🤞)</li>
           <li>🐢 Software engineering.</li>
           <li>🦥 Automation for really lazy people like me</li>
         </ul>
@@ -45,9 +59,11 @@ import Base from "../layouts/Base.astro";
     object-fit: cover;
     width: min(350px, 90%);
     border-radius: var(--border-radius);
+    /* margin: var(--v-gap-l) var(--h-gap-l); */
+    float: right;
   }
   .about-content {
-    max-width: 600px;
+    /* max-width: 600px; */
     width: 100%;
   }
 </style>

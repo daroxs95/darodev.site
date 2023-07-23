@@ -7,4 +7,5 @@ heroImage: "/products/decms.png"
 showDetailPage: false
 github: https://github.com/daroxs95/decms
 web: https://decms.surge.sh/
+draft: true
 ---
