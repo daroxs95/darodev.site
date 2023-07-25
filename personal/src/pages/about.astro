@@ -9,12 +9,7 @@ import Base from "../layouts/Base.astro";
   <main class="main-content">
     <div class="about-content-wrapper comeFromBelow f-jc-center f-wrap">
       <article class="about-content">
-        <img
-          class="m-def"
-          src="/placeholder-about.jpg"
-          width="350"
-          height="500"
-        />
+        <img src="/placeholder-about.jpg" />
         <h1>👻 Greetings to the fellow geeks</h1>
         <p>
           Hi, I'm Darián López, A mathematician turned software developer 😎.
@@ -26,9 +21,11 @@ import Base from "../layouts/Base.astro";
           development.
         </p>
         <p>
-          Fancied of music, simplicity and beaty of applied maths, and videogames.
-          I find that high level languages/tools and the low level counterpart complements each other,
-          and the journey to mastering something involves getting things done and "reinvent the wheel" in equal parts.
+          Fancied of music, simplicity and beaty of applied maths, and
+          videogames. I find that high level languages/tools and the low level
+          counterpart complements each other, and the journey to mastering
+          something involves getting things done and "reinvent the wheel" in
+          equal parts.
         </p>
 
         <p>
@@ -57,13 +54,22 @@ import Base from "../layouts/Base.astro";
     /* margin-bottom: auto; */
     margin-top: 20px;
     object-fit: cover;
-    width: min(350px, 90%);
     border-radius: var(--border-radius);
+    width: 100%;
+    height: 250px;
+    aspect-ratio: 1;
     /* margin: var(--v-gap-l) var(--h-gap-l); */
-    float: right;
   }
   .about-content {
     /* max-width: 600px; */
     width: 100%;
+  }
+  @media (min-width: 600px) {
+    img {
+      height: 500px;
+      float: right;
+      width: min(350px, 90%);
+      margin: var(--v-gap) var(--h-gap);
+    }
   }
 </style>

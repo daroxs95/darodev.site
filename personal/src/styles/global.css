@@ -40,13 +40,18 @@ time {
 	font-style: italic;
 	color: var(--form-text-placeholder);
 }
-
 .article-post img {
 	object-fit: cover;
 	object-position: center center;
-	height: 500px;
+	height: 250px;
 	width: 100%;
 	aspect-ratio: 1;
+}
+
+@media (min-width:600px) {
+	.article-post img {
+		height: 500px;
+	}
 }
 
 .article-post video {
