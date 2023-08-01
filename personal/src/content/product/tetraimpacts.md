@@ -9,8 +9,10 @@ web: https://tetraimpacts.com/
 ---
 
 As the technical lead on the project it is really satisfactory to steer the ship in the right direction and achieve a clean, low overhead solution for our needs.
+Also working in a fullstack perspective and handling every aspect of development cycle was a rewarding and growing experience, a game changer for my skills and personal growth.
 
 Core highlights:
+
 - Technical leading
 - MUI inspired custom react component library
 - High standard of quality, close to metal app and internal tooling performance
@@ -20,5 +22,6 @@ Core highlights:
 - Green and environmental solutions by squeezing performance and minimizing network and server usage without sacrificing functionalities or responsiveness
 
 Key takeaways:
+
 - During the design from the ground up of big system, stop and reevaluate technologies can be a key recurring task, not all state of the art solutions fit all cases,
-sometimes do it yourself is the easiest more scalable way
+  sometimes do it yourself is the easiest more scalable way

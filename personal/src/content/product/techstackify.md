@@ -23,5 +23,5 @@ Core highlights:
 - Space to creation of canvas rendering for exporting functionality and leverage of webgl or webgpu for future improvements
 
 Key takeaways:
-- Svelte is fast, simple, and get the work done
+- Svelte is fast, simple, and gets the work done
 - Custom fast paced tooling with carefully chosen technologies produces more quality and extendable results while minimizing drawbacks
