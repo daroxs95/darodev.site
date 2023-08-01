@@ -6,6 +6,8 @@ export interface Props {
   date: Date;
   image?: string;
   url?: string;
+  web?: string;
+  github?: string;
   vertical?: boolean;
   externUrl?: boolean;
   draft?: boolean;
@@ -22,6 +24,8 @@ const {
   externUrl,
   type,
   draft,
+  github,
+  web,
 } = Astro.props;
 ---
 
@@ -51,7 +55,30 @@ const {
     {draft && <span class="text-c-unfocus">DRAFT</span>}
     <br />
     {description && <p class="description">{description}</p>}
-    <FormattedDate date={date} />
+    <div class="date-links hstack">
+      <FormattedDate date={date} />
+      <div class="links hstack">
+        {
+          github && (
+            <a
+              data-transition-page-link
+              class="p-0"
+              href={github}
+              target="_blank"
+            >
+              <i class="fa-brands fa-github font-icon-button" title="Github" />
+            </a>
+          )
+        }
+        {
+          web && (
+            <a data-transition-page-link class="p-0" href={web} target="_blank">
+              <i class="fa-solid fa-globe font-icon-button" title="Website" />
+            </a>
+          )
+        }
+      </div>
+    </div>
   </div>
 </div>
 
@@ -86,5 +113,9 @@ const {
   .card-type {
     font-size: 0.8rem;
     margin-right: 2px;
+  }
+
+  .date-links {
+    gap: 50px !important;
   }
 </style>

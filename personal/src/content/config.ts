@@ -16,6 +16,9 @@ const blog = defineCollection({
 			.optional()
 			.transform((str) => (str ? new Date(str) : undefined)),
 		heroImage: z.string().optional(),
+		bannerImage: z.string().optional(),
+		github: z.string().optional(),
+		web: z.string().optional(),
 		draft: z.boolean().optional(),
 	}),
 });
@@ -36,6 +39,7 @@ const product = defineCollection({
 			.optional()
 			.transform((str) => (str ? new Date(str) : undefined)),
 		heroImage: z.string().optional(),
+		bannerImage: z.string().optional(),
 		draft: z.boolean().optional(),
 		showDetailPage: z.boolean().optional(),
 		github: z.string().optional(),

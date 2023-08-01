@@ -31,6 +31,8 @@ const products = (await getCollection("product"))
                     : product.data.web
                 }
                 externUrl={!product.data.showDetailPage}
+                github={product.data.github}
+                web={product.data.web}
                 description={product.data.description}
                 draft={product.data.draft}
               />

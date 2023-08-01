@@ -5,8 +5,19 @@ import Base from "./Base.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDate, updatedDate, heroImage, keywords } =
-  Astro.props;
+const {
+  title,
+  description,
+  pubDate,
+  updatedDate,
+  heroImage,
+  keywords,
+  bannerImage,
+  github,
+  web,
+} = Astro.props;
+
+const image = bannerImage || heroImage;
 ---
 
 <Base
@@ -17,16 +28,47 @@ const { title, description, pubDate, updatedDate, heroImage, keywords } =
 >
   <main class="main-content">
     <article class="article-post comeFromBelow">
-      {heroImage && <img src={heroImage} alt="" />}
+      {image && <img src={image} alt="" />}
       <h1 class="title">{title}</h1>
-      <FormattedDate date={pubDate} />
-      {
-        updatedDate && (
-          <div class="last-updated-on">
-            Last updated on <FormattedDate date={updatedDate} />
-          </div>
-        )
-      }
+      <div>
+        <FormattedDate date={pubDate} />
+        {
+          updatedDate && (
+            <div class="last-updated-on">
+              Last updated on <FormattedDate date={updatedDate} />
+            </div>
+          )
+        }
+        <div class="links hstack">
+          {
+            github && (
+              <a
+                data-transition-page-link
+                class="p-0"
+                href={github}
+                target="_blank"
+              >
+                <i
+                  class="fa-brands fa-github font-icon-button"
+                  title="Github"
+                />
+              </a>
+            )
+          }
+          {
+            web && (
+              <a
+                data-transition-page-link
+                class="p-0"
+                href={web}
+                target="_blank"
+              >
+                <i class="fa-solid fa-globe font-icon-button" title="Website" />
+              </a>
+            )
+          }
+        </div>
+      </div>
       <hr />
       <div class="article-content">
         <slot />
