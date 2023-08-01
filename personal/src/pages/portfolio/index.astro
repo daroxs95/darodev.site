@@ -27,7 +27,7 @@ const products = (await getCollection("product"))
                 image={product.data.heroImage}
                 url={
                   product.data.showDetailPage
-                    ? `/product/${product.slug}/`
+                    ? `/portfolio/${product.slug}/`
                     : product.data.web
                 }
                 externUrl={!product.data.showDetailPage}
