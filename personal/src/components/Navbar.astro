@@ -7,7 +7,7 @@ import { SITE_TITLE } from "../consts";
   <nav class="f-ai-end f-jc-start p-0">
     <div class="hstack m-0">
       <HeaderLink class="home-link" href="/">
-        <span class="f-ai-center p-def">
+        <span class="f-ai-center p-def site-title">
           {SITE_TITLE}
         </span>
       </HeaderLink>
@@ -34,5 +34,8 @@ import { SITE_TITLE } from "../consts";
   .home-link {
     color: var(--color-text) !important;
     text-decoration: none;
+  }
+  .site-title {
+    letter-spacing: 0.2em;
   }
 </style>

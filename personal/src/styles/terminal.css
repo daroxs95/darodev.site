@@ -1,0 +1,24 @@
+.terminal {
+  height: 100vh;
+}
+
+.terminal * {
+  font-family: Menlo, Consolas, monospace !important;
+  /* font-size: 3rem;
+  letter-spacing: 3rem; */
+}
+
+.xterm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .xterm-rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.xterm-rows div:has(.xterm-cursor) {
+  order: -1;
+} */

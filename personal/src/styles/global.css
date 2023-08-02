@@ -8,23 +8,25 @@ main {
 	min-height: 100vh;
 }
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		--app-bg: var(--color-bg-9);
-		--app-bg-light: var(--color-bg-8);
-		--app-bg-dark: var(--color-bg-dark);
+@media (prefers-color-scheme: dark) {}
 
-		--color-text: var(--color-bg-light);
-		--color-text-heading: var(--color-bg-light);
-		--color-text-subtle: var(--color-bg-3);
+:root {
+	--app-bg: var(--color-bg-9);
+	--app-bg-light: var(--color-bg-8);
+	--app-bg-dark: var(--color-bg-dark);
 
-		--color-text-hover: var(--color-bg-6);
-		--color-text-active: var(--color-bg-8);
-		--color-text-shadow: var(--color-bg-10);
-	}
+	--color-text: var(--color-bg-light);
+	--color-text-heading: var(--color-bg-light);
+	--color-text-subtle: var(--color-bg-3);
+
+	--color-text-hover: var(--color-bg-6);
+	--color-text-active: var(--color-bg-8);
+	--color-text-shadow: var(--color-bg-10);
 }
 
-.astro-code, code {
+
+.astro-code,
+code {
 	background-color: var(--app-bg-light) !important;
 }
 
@@ -40,6 +42,7 @@ time {
 	font-style: italic;
 	color: var(--form-text-placeholder);
 }
+
 .article-post img {
 	object-fit: cover;
 	object-position: center center;
@@ -61,4 +64,8 @@ time {
 .article-post img.post-medium-image {
 	max-height: 600px;
 	object-fit: contain;
+}
+
+a:hover:not([aria-disabled="true"]) {
+	text-decoration: none;
 }

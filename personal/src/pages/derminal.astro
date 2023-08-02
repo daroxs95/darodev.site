@@ -1,0 +1,203 @@
+---
+import Empty from "../layouts/Empty.astro";
+import "xterm/css/xterm.css";
+import "./../styles/terminal.css";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("blog"))
+  .filter((post) => import.meta.env.DEV || !post.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const products = (await getCollection("product"))
+  .filter((post) => import.meta.env.DEV || !post.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const data = JSON.stringify({ posts, products });
+---
+
+<Empty
+  title="Derminal"
+  description="The terminal description"
+  keywords="blog, UX, UI, terminal, tool"
+>
+  <div data-message={data} id="terminal"></div>
+</Empty>
+
+<script>
+  import { Terminal } from "xterm";
+  import { WebLinksAddon } from "xterm-addon-web-links";
+  import { FitAddon } from "xterm-addon-fit";
+  import { CollectionEntry } from "astro:content";
+
+  function generateString(input, color) {
+    var r = parseInt(color.substring(1, 3), 16);
+    var g = parseInt(color.substring(3, 5), 16);
+    var b = parseInt(color.substring(5, 7), 16);
+    return "\u001b[38;2;" + r + ";" + g + ";" + b + "m" + input + "\u001b[0m";
+  }
+
+  const term = new Terminal({
+    cursorBlink: true,
+    allowTransparency: true,
+    scrollback: 1000,
+    fontSize: 20,
+    fontWeight: 300,
+    theme: {
+      foreground: "#23fd71",
+      background: "rgb(1,0,1,0)",
+      cursor: "#23fd71",
+      cursorAccent: "rgb(1,0,1,0)",
+    },
+  });
+  const startLine = () => term.write(generateString(">>>> ", "#f5414f"));
+  const clearLine = () => term.write("\x1b[2K\r");
+  const welcome = () =>
+    term.write(
+      `Welcome to ${generateString("determ", "#f5414f")} © 2023 :) \n\r`
+    );
+
+  const t = document.getElementById("terminal");
+  const {
+    posts,
+    products,
+  }: {
+    posts: CollectionEntry<"blog">[];
+    products: CollectionEntry<"product">[];
+  } = JSON.parse(t?.getAttribute("data-message") || "{}");
+  // @ts-ignore
+  term.open(t);
+  const webLinksAddon = new WebLinksAddon();
+  const fitAddon = new FitAddon();
+  term.loadAddon(webLinksAddon);
+  term.loadAddon(fitAddon);
+  welcome();
+  startLine();
+  term.focus();
+
+  let history: string[] = [];
+  let currentHistorySelected = 0;
+
+  function proccessLine(line: string) {
+    history.push(line);
+    currentHistorySelected = history.length;
+    term.write("\r\n");
+    switch (line) {
+      case "clear":
+        term.clear();
+        clearLine();
+        welcome();
+        startLine();
+        break;
+      case "ls":
+        posts.map((p) => {
+          term.write(
+            generateString(
+              `${p.data.title} - ${new Date(
+                p.data.pubDate
+              ).toLocaleDateString()}\r\n`,
+              "#7454e2"
+            )
+          );
+        });
+        term.write("\r\n");
+        products.map((p) => {
+          term.write(
+            generateString(
+              `${p.data.title} - ${new Date(
+                p.data.pubDate
+              ).toLocaleDateString()} - ${p.data.web}\r\n`,
+              "#7454e2"
+            )
+          );
+        });
+        startLine();
+        break;
+      case "help":
+        term.write(generateString("clear", "#7454e2"));
+        term.write(generateString(" - ", "#ffffff"));
+        term.write("clear the terminal\r\n");
+
+        term.write(generateString("ls", "#7454e2"));
+        term.write(generateString(" - ", "#ffffff"));
+        term.write("list the posts and products\r\n");
+
+        term.write(generateString("help", "#7454e2"));
+        term.write(generateString(" - ", "#ffffff"));
+        term.write("list the available commands\r\n");
+
+        term.write(generateString("boot-ui", "#7454e2"));
+        term.write(generateString(" - ", "#ffffff"));
+        term.write("boot graphical interface\r\n");
+        startLine();
+        break;
+      case "boot-ui":
+        term.write(generateString("Booting UI... \r\n", "#7454e2"));
+        window.location.href = "/";
+        break;
+      case "":
+        startLine();
+        break;
+      case "rm -r *.*":
+        term.write(generateString("Nice try haker... 😎\r\n", "#7454e2"));
+      default:
+        term.write(
+          generateString(
+            `${line}: is not recognized as the name of a cmdlet, function, script file \r\n`,
+            "#f5414f"
+          )
+        );
+        term.write("\r\n");
+        startLine();
+        break;
+    }
+  }
+
+  let line = "";
+  term.onKey((e) => {
+    const printable =
+      !e.domEvent.altKey && !e.domEvent.ctrlKey && !e.domEvent.metaKey;
+    switch (e.key) {
+      case "\r": // Enter
+        proccessLine(line);
+        line = "";
+        break;
+      case "\x7F": // Backspace
+        // remove last char of string
+        if (line) line = line.slice(0, -1);
+        term.write("\b \b");
+        break;
+      // arrow up
+      case "\x1B[A": {
+        e.domEvent.preventDefault();
+        if (history.length) {
+          if (currentHistorySelected >= 1) currentHistorySelected -= 1;
+          const historyItem = history[currentHistorySelected];
+          line = historyItem;
+          clearLine();
+          startLine();
+          term.write(historyItem);
+        }
+        break;
+      }
+      // arrow down
+      case "\x1B[B": {
+        e.domEvent.preventDefault();
+        if (history.length) {
+          if (currentHistorySelected < history.length - 1)
+            currentHistorySelected += 1;
+          const historyItem = history[currentHistorySelected];
+          line = historyItem;
+          clearLine();
+          startLine();
+          term.write(historyItem);
+        }
+        break;
+      }
+      default:
+        if (printable) {
+          line += e.key;
+          term.write(e.key);
+        }
+        break;
+    }
+  });
+</script>
