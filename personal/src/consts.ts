@@ -10,7 +10,7 @@ export const PRODUCTS_PAGE_DESCRIPTION =
 export const PERSONAL_GITHUB = "https://github.com/daroxs95";
 export const PERSONAL_LINKEDIN =
   "https://www.linkedin.com/in/darian-lopez-utra/";
-export const CV_URL = "/public/Darian_Lopez_Utra-CV.pdf";
+export const CV_URL = "/Darian_Lopez_Utra-CV.pdf";
 export const ABOUT_ABSTRACT = `Hi, I'm Darián López, A mathematician turned software developer 😎.
 
 Currently working on continuous learning and having no "zero days".
