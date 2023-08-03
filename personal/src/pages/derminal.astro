@@ -1,8 +1,10 @@
 ---
 import Empty from "../layouts/Empty.astro";
+import { CV_URL, ABOUT_ABSTRACT } from "../consts";
+import { getCollection } from "astro:content";
+
 import "xterm/css/xterm.css";
 import "./../styles/terminal.css";
-import { getCollection } from "astro:content";
 
 const posts = (await getCollection("blog"))
   .filter((post) => import.meta.env.DEV || !post.data.draft)
@@ -11,7 +13,7 @@ const products = (await getCollection("product"))
   .filter((post) => import.meta.env.DEV || !post.data.draft)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
-const data = JSON.stringify({ posts, products });
+const data = JSON.stringify({ posts, products, CV_URL, ABOUT_ABSTRACT });
 ---
 
 <Empty
@@ -27,6 +29,7 @@ const data = JSON.stringify({ posts, products });
   import { WebLinksAddon } from "xterm-addon-web-links";
   import { FitAddon } from "xterm-addon-fit";
   import { CollectionEntry } from "astro:content";
+  import { DEURL } from "../utils/url";
 
   function generateString(input, color) {
     var r = parseInt(color.substring(1, 3), 16);
@@ -59,9 +62,13 @@ const data = JSON.stringify({ posts, products });
   const {
     posts,
     products,
+    CV_URL,
+    ABOUT_ABSTRACT,
   }: {
     posts: CollectionEntry<"blog">[];
     products: CollectionEntry<"product">[];
+    CV_URL: string;
+    ABOUT_ABSTRACT: string;
   } = JSON.parse(t?.getAttribute("data-message") || "{}");
   // @ts-ignore
   term.open(t);
@@ -91,9 +98,12 @@ const data = JSON.stringify({ posts, products });
         posts.map((p) => {
           term.write(
             generateString(
-              `${p.data.title} - ${new Date(
+              `--> ${p.data.title} - ${new Date(
                 p.data.pubDate
-              ).toLocaleDateString()}\r\n`,
+              ).toLocaleDateString()} - ${DEURL.resolveRelative(
+                `/blog/${p.slug}`,
+                window.location.origin
+              )}\r\n`,
               "#7454e2"
             )
           );
@@ -102,7 +112,7 @@ const data = JSON.stringify({ posts, products });
         products.map((p) => {
           term.write(
             generateString(
-              `${p.data.title} - ${new Date(
+              `--> ${p.data.title} - ${new Date(
                 p.data.pubDate
               ).toLocaleDateString()} - ${p.data.web}\r\n`,
               "#7454e2"
@@ -127,6 +137,14 @@ const data = JSON.stringify({ posts, products });
         term.write(generateString("boot-ui", "#7454e2"));
         term.write(generateString(" - ", "#ffffff"));
         term.write("boot graphical interface\r\n");
+
+        term.write(generateString("resume", "#7454e2"));
+        term.write(generateString(" - ", "#ffffff"));
+        term.write("view curriculum vitae\r\n");
+
+        term.write(generateString("about", "#7454e2"));
+        term.write(generateString(" - ", "#ffffff"));
+        term.write("short self description\r\n");
         startLine();
         break;
       case "boot-ui":
@@ -136,12 +154,29 @@ const data = JSON.stringify({ posts, products });
       case "":
         startLine();
         break;
+      case "about":
+        term.write(
+          generateString(ABOUT_ABSTRACT.replaceAll("\n", "\n\r"), "#7454e2")
+        );
+        term.write("\r\n");
+        startLine();
+        break;
+      case "resume":
+        term.write(
+          generateString(
+            DEURL.resolveRelative(CV_URL, window.location.origin),
+            "#7454e2"
+          )
+        );
+        term.write("\r\n");
+        startLine();
+        break;
       case "rm -r *.*":
         term.write(generateString("Nice try haker... 😎\r\n", "#7454e2"));
       default:
         term.write(
           generateString(
-            `${line}: is not recognized as the name of a cmdlet, function, script file \r\n`,
+            `${line}: not found 🥲 \r\n`,
             "#f5414f"
           )
         );

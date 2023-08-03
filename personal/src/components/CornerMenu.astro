@@ -1,0 +1,36 @@
+---
+---
+
+<div class="container">
+  <div class="content f-jc-center f-ai-center">
+    <a class="" href="/derminal" title="Open derminal">
+      <i class="fa-solid fa-terminal font-icon-button"></i>
+    </a>
+  </div>
+</div>
+
+<style>
+  .container {
+    position: absolute;
+    transform: translate3d(-150px, -20px, 0px);
+    rotate: 45deg;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 150px;
+    background-color: var(--color-primary);
+    transition: all var(--anim-duration) ease-in-out;
+  }
+  .container:hover {
+    transform: translate3d(0, 0, 0);
+    rotate: 0deg;
+    background-color: transparent;
+  }
+  .content {
+    height: 100%;
+    opacity: 0;
+  }
+  .content:hover {
+    opacity: 1;
+  }
+</style>
