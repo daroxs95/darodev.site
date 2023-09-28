@@ -6,6 +6,7 @@ keywords: "tech, IT, CI/CD, web, react, job market, "
 heroImage: "/products/tetraimpacts.png"
 showDetailPage: true
 web: https://tetraimpacts.com/
+draft: true
 ---
 
 As the technical lead on the project it is really satisfactory to steer the ship in the right direction and achieve a clean, low overhead solution for our needs.

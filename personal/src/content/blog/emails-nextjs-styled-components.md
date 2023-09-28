@@ -266,7 +266,8 @@ Note that:
 - We use some kind of re-templating, useful to send same template to multiple recipients (changing only name or example, like a welcome email)
   and avoid re rendering next.js page.
 - ⚠️ A better approach maybe includes some microservice to manage the sending emails in bulks, with a queue/pool and some support for retry on failures for example, this is just an example and does not scales well.
-- There is a workaround to get the current domain where is hosted the app.
+- ⚠️ An even better approach could be cutting the middle man and rendering the react page programatically and not via a web request, it should work with a slight modification of the code, but I have not tested it.
+- In the example code we are using a workaround to get the current domain where is hosted the app.
 - In the email we can easily have a link redirecting to web page to render email correctly and easily, like a "could not view in correctly?, view in browser"
 
 
