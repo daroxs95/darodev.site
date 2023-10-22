@@ -29,7 +29,7 @@
   <body>
     <main>
       <div class="profile-pic">
-        <img width="300" src="public/cv2.jpg" />
+        <img alt="" width="300" src="cv2.jpg" />
       </div>
 
       <section class="about">
@@ -73,6 +73,7 @@
               <time>6/2022-9/2022</time>
             </div>
           </div>
+
           <div class="experiences-group">
             <div class="experience">
               <h3>C++ Developer</h3>
@@ -84,6 +85,13 @@
               <h4>Kmada</h4>
               <time>7/2020-1/2021</time>
             </div>
+            <a
+              class="link-button"
+              target="_blank"
+              referrerpolicy="no-referrer"
+              href="https://www.linkedin.com/in/darian-lopez-utra/"
+              >Detailed LinkedIn CV</a
+            >
           </div>
         </div>
       </section>
@@ -114,7 +122,7 @@
           <a
             target="_blank"
             referrerpolicy="no-referrer"
-            href="https://www.linkedin.com/in/darian-lopez-utra/">LinkedIn</a
+            href="https://www.linkedin.com/in/darian-lopez-utra/message/">LinkedIn</a
           >
           <a
             target="_blank"
@@ -125,7 +133,7 @@
         <h4>
           • Made with <span>❤</span> by
           <a href="https://github.com/daroxs95">Darián López Utra</a>
-          • 2023 • 
+          • 2023 •
         </h4>
       </div>
     </footer>
@@ -357,5 +365,20 @@
   .social a {
     font-size: 25px;
     padding: calc(var(--v-space) / 2) var(--h-space);
+  }
+
+  .link-button {
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    padding: calc(var(--v-space) / 2) calc(var(--h-space) / 2);
+    width: fit-content;
+    border: 1px solid transparent;
+  }
+
+  .link-button:hover {
+    color: black;
+    background-color: white;
+    border: 1px solid black;
   }
 </style>
