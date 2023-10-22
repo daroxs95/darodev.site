@@ -29,7 +29,7 @@
   <body>
     <main>
       <div class="profile-pic">
-        <img alt="" width="300" src="/cv2.jpg" />
+        <img alt="" width="300" src="/cv.jpg" />
       </div>
 
       <section class="about">
@@ -48,7 +48,7 @@
         </p>
         <p>
           When you get to know me, I am a lot of fun and an incredible fast
-          learner, "a great asset" you may think, well, that's correct. Feel
+          learner. If we are a match feel
           free to <a href="#contact">reach out</a>.
         </p>
       </section>
@@ -117,8 +117,13 @@
       <div class="footer-content">
         <h2 id="contact">Contact</h2>
         <div class="social">
-          <a href="tel:+5358375347">+5358375347</a>
+          <!-- <a href="tel:+5358375347">+5358375347</a> -->
           <a href="mailto:daroxs95@gmail.com">daroxs95@gmail.com</a>
+          <a
+            target="_blank"
+            referrerpolicy="no-referrer"
+            href="https://www.instagram.com/darian275/">Instagram</a
+          >
           <a
             target="_blank"
             referrerpolicy="no-referrer"
@@ -225,7 +230,10 @@
     object-position: top;
     width: 100%;
     max-height: 485px;
-    box-shadow: black calc(-1 * var(--h-space) / 4) calc(var(--h-space) / 4);
+    box-shadow: black 0 calc(var(--h-space) / 4);
+    @media (width >= 768px) {
+      box-shadow: black calc(-1 * var(--h-space) / 4) calc(var(--h-space) / 4);
+    }
   }
 
   .presentation {
