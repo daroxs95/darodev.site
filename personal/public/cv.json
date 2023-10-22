@@ -1,0 +1,201 @@
+{
+  "public_identifier": "darian-lopez-utra",
+  "profile_pic_url": "https://media.licdn.com/dms/image/D4E03AQFfaG2laeU9xw/profile-displayphoto-shrink_800_800/0/1679576813411?e=1703721600&v=beta&t=7RzJcGzwhZLbQyZ_WHjwmS4wIGF6DJRKrzPs-Hd06ws",
+  "background_cover_image_url": "https://media.licdn.com/dms/image/D4E16AQGh-zpNoj_POQ/profile-displaybackgroundimage-shrink_350_1400/0/1687437799867?e=1703721600&v=beta&t=kWuk6wLpQJ3S8_IXw-9gjF2HzbkVrpgmVgnJo_AgN5o",
+  "first_name": "Dari\u00e1n",
+  "last_name": "L\u00f3pez Utra",
+  "full_name": "Dari\u00e1n L\u00f3pez Utra",
+  "follower_count": 474,
+  "occupation": "Technical Leader at Tetraimpacts",
+  "headline": "Software Engineer | Mathematician",
+  "summary": "Hi, mathematician here, really exited about technology, programming, videogames, music and knowledge. I am little introvert and with some issues to maintain focus, that is why I have a lot of pet projects and ideas, to be able to be constantly working on something. When you get to know me, I am a lot of fun and an incredible fast learner, \"a great asset\" you may think, well, that's correct. Feel free to reach out.",
+  "country": "CU",
+  "country_full_name": "Cuba",
+  "city": "Havana",
+  "state": null,
+  "experiences": [
+    {
+      "starts_at": { "day": 1, "month": 2, "year": 2022 },
+      "ends_at": null,
+      "company": "Tetraimpacts",
+      "company_linkedin_profile_url": "https://www.linkedin.com/company/tetraimpacts/",
+      "title": "Technical Leader",
+      "description": "\u2022 Leading the technical direction of a NextJS and a custom react component library projects, including the architecture, design, and implementation\n\u2022 Mentoring and guiding a team of developers, providing technical guidance and support as needed\n\u2022 Working closely with project stakeholders to understand and prioritize business requirements\n\u2022 Collaborating with the development team to ensure the project is delivered on time and to a high standard of quality\n\u2022 Continuously improving the development process and practices, including implementing best practices for code review, testing, and deployment\n\u2022 Keeping up to date with the latest trends and technologies in the NextJS ecosystem and incorporating them into the project as appropriate",
+      "location": "Havana, Cuba",
+      "logo_url": "https://media.licdn.com/dms/image/C4E0BAQEQmQY1-p8ZHQ/company-logo_400_400/0/1671118026424?e=1706140800&v=beta&t=aUBZ-8iLrHWG4jya3nNgL88dA75HzjwII4IX-qiAisU"
+    },
+    {
+      "starts_at": { "day": 1, "month": 3, "year": 2022 },
+      "ends_at": { "day": 31, "month": 3, "year": 2023 },
+      "company": "Private",
+      "company_linkedin_profile_url": null,
+      "title": "Frontend Developer",
+      "description": "\u2022 Mantainment and development on a large codebase of a B2B application. (Next.js, Bootstrap)\n\u2022 Implementation of dashboard and management views for an affiliate system. (Next.js, Tailwind.css)\n\u2022 Achievement of short deadlines without sacrificing code optimization, cohesion or requirements.\n\u2022 Blend between SSR( server side rendering ) and CSR( client side rendering ), for leveraging SPAs\ncoding benefits and SEO optimizations.\n\u2022 Extense REST api integration.\n\u2022 SCRUM methodology.",
+      "location": "Havana, Cuba",
+      "logo_url": null
+    },
+    {
+      "starts_at": { "day": 1, "month": 6, "year": 2022 },
+      "ends_at": { "day": 30, "month": 9, "year": 2022 },
+      "company": "Sibucan",
+      "company_linkedin_profile_url": null,
+      "title": "React Native Developer",
+      "description": "\u2022 Development of notification system and multiple features for a rapid growth user-to-business app\n\u2022 Improvements in build configurations and environments\n\u2022 Agile development in a multifunctional and tightly integrated team",
+      "location": "Havana, Cuba",
+      "logo_url": null
+    },
+    {
+      "starts_at": { "day": 1, "month": 1, "year": 2021 },
+      "ends_at": { "day": 31, "month": 1, "year": 2022 },
+      "company": "Private",
+      "company_linkedin_profile_url": null,
+      "title": "C++ Developer",
+      "description": "\u2022 Successfully started life cycle of an medical app tool competing with international alternatives and unique in national market.\n\u2022 Designed and implemented from the ground up a Windows/Linux GUI application for commissioning of radio therapy treatments.\n\u2022 Extensive use of Qt5, Cmake, OO Design, and SQLite by ODB(C++ Object-Relational Mapping system).\n\u2022 Implementation of a CLI integrity checker for malformed machine or human generated data.\n\u2022 Requirements understanding, design and development of new features like IPC technics(shared memory) and introduction of JSON(jsoncpp).\n\u2022 Lead developer in a small team of young developers and professionals.",
+      "location": "Havana, Cuba",
+      "logo_url": null
+    },
+    {
+      "starts_at": { "day": 1, "month": 2, "year": 2020 },
+      "ends_at": { "day": 30, "month": 6, "year": 2021 },
+      "company": "Private and Undergraduate Projects",
+      "company_linkedin_profile_url": null,
+      "title": "C++ Developer",
+      "description": "\u2022 Development of a front end for testing a cryptographic library.\n\u2022 Leverage of high performance and concurrent tasks for simulations and analysis of cryptographic algorithms.\n\u2022 Quick prototyping with the use of custom cmake dependency manager library and immediate mode gui(DearImGui).\n\u2022 Extensive use of modern C++(14/17), STL, Templating and Unit testing.\n\u2022 Debugging, tracing and log analysis.\n\u2022 Compiler independent code.\n\u2022 Github CI/CD.\n\u2022 Designed and implemented extension and scripting(Lua) integration using Sol2.",
+      "location": "Havana, Cuba",
+      "logo_url": null
+    },
+    {
+      "starts_at": { "day": 1, "month": 7, "year": 2020 },
+      "ends_at": { "day": 31, "month": 1, "year": 2021 },
+      "company": "Kmada",
+      "company_linkedin_profile_url": null,
+      "title": "Frontend Developer",
+      "description": "\u2022 Developed a dashboard and a content management system to increase accesibility to blog and article posting in the platform.\n\u2022 Implemented multiple dynamic and browser compatible pages using HTML5, CSS, JS, TS(React, Redux, Apollo).\n\u2022 Tightly integration with RESTfull APIs.\n\u2022 SCRUM development in a closely integrated team.",
+      "location": "Cuba",
+      "logo_url": null
+    }
+  ],
+  "education": [
+    {
+      "starts_at": { "day": 1, "month": 9, "year": 2023 },
+      "ends_at": { "day": 30, "month": 9, "year": 2024 },
+      "field_of_study": "Frontend development",
+      "degree_name": "Master's degree",
+      "school": "HARBOUR.SPACE",
+      "school_linkedin_profile_url": null,
+      "description": null,
+      "logo_url": "https://media.licdn.com/dms/image/D4E0BAQFZs1kC3ApnLA/company-logo_400_400/0/1688381709472?e=1706140800&v=beta&t=lyFtDyKmA7LGmIjriNE2ONkFcbH5tdr_0tD6CB0SCFQ",
+      "grade": null,
+      "activities_and_societies": null
+    },
+    {
+      "starts_at": { "day": 1, "month": 1, "year": 2014 },
+      "ends_at": { "day": 31, "month": 1, "year": 2021 },
+      "field_of_study": "Mathematics",
+      "degree_name": "Bachelor's degree",
+      "school": "University of Havana",
+      "school_linkedin_profile_url": null,
+      "description": null,
+      "logo_url": "https://media.licdn.com/dms/image/C510BAQHfrsHuFi8uLw/company-logo_400_400/0/1519868332338?e=1706140800&v=beta&t=6wnp6wywEGiRG2_9DDeDvb7EXg2tgSxDExJwhXCrjqg",
+      "grade": null,
+      "activities_and_societies": null
+    }
+  ],
+  "languages": [],
+  "accomplishment_organisations": [],
+  "accomplishment_publications": [],
+  "accomplishment_honors_awards": [],
+  "accomplishment_patents": [],
+  "accomplishment_courses": [],
+  "accomplishment_projects": [],
+  "accomplishment_test_scores": [],
+  "volunteer_work": [],
+  "certifications": [
+    {
+      "starts_at": { "day": 1, "month": 11, "year": 2021 },
+      "ends_at": null,
+      "name": "EF SET English Certificate 87/100 (C2 Proficient)",
+      "license_number": null,
+      "display_source": "efset.org",
+      "authority": "EF Standard English Test (EF SET) ",
+      "url": "https://www.efset.org/cert/5NCVGU"
+    }
+  ],
+  "connections": null,
+  "people_also_viewed": [
+    {
+      "link": "https://www.linkedin.com/in/rodrigo-daniel-pino",
+      "name": "Rodrigo Pino",
+      "summary": "Computer Scientist | Software Engineer at Nethermind",
+      "location": null
+    },
+    {
+      "link": "https://www.linkedin.com/in/wiliam-sariol",
+      "name": "Wiliam Sariol",
+      "summary": "Senior Software Engineer @ Intive",
+      "location": null
+    },
+    {
+      "link": "https://www.linkedin.com/in/mtacosta",
+      "name": "Miguel Torres Acosta",
+      "summary": "Software Developer | REACT | Nodejs | JavaScript | Python | SQL",
+      "location": null
+    },
+    {
+      "link": "https://www.linkedin.com/in/jos\u00e9-carlos-oliva-guerrero-03a4231a1",
+      "name": "Jos\u00e9 Carlos Oliva Guerrero",
+      "summary": "BSc. Computer Science",
+      "location": null
+    },
+    {
+      "link": "https://www.linkedin.com/in/carlos-bermudez-porto-3078bb165",
+      "name": "Carlos Bermudez Porto",
+      "summary": "Computer Scientist",
+      "location": null
+    },
+    {
+      "link": "https://www.linkedin.com/in/jdavidhc",
+      "name": "Joel David Hern\u00e1ndez Cruz",
+      "summary": "Full Stack Developer at Blueberry Consultants Ltd",
+      "location": null
+    },
+    {
+      "link": "https://www.linkedin.com/in/davit-muchiashvili",
+      "name": "Davit Muchiashvili",
+      "summary": "Mobile Application Developer at Qwerty",
+      "location": null
+    },
+    {
+      "link": "https://www.linkedin.com/in/jch97",
+      "name": "Jos\u00e9 Carlos Hern\u00e1ndez Pi\u00f1era",
+      "summary": "Computer Scientist | BackEnd Developer | Competitive Programming Lover.",
+      "location": null
+    },
+    {
+      "link": "https://www.linkedin.com/in/carltonl",
+      "name": "Carlton Lindsay",
+      "summary": "Fronted Web Developer",
+      "location": null
+    },
+    {
+      "link": "https://www.linkedin.com/in/ariel-alfonso-triana-p\u00e9rez-8369b8204",
+      "name": "Ariel Alfonso Triana P\u00e9rez",
+      "summary": "Python Developer at BNZSA",
+      "location": null
+    }
+  ],
+  "recommendations": [],
+  "activities": [],
+  "similarly_named_profiles": [],
+  "articles": [],
+  "groups": [],
+  "skills": [],
+  "inferred_salary": null,
+  "gender": null,
+  "birth_date": null,
+  "industry": null,
+  "extra": null,
+  "interests": [],
+  "personal_emails": [],
+  "personal_numbers": []
+}

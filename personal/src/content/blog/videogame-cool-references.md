@@ -34,4 +34,7 @@ This here is a non curated list of the last cool references or random stuff in v
  ![photo_2021-11-08_18-57-17](/blog_assets/dos2-darksouls.png)
 
 
-That's all for now ✌️. 
+That's all for now ✌️.
+
+### Divinity Original Sin
+- 
