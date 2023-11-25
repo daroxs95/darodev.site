@@ -30,14 +30,20 @@ import { SITE_TITLE } from "../consts";
     getColorTheme,
   } from "../../decss/utils/theme_loader.mjs";
 
-  setColorTheme(getColorTheme());
+  const savedTheme = getColorTheme();
+  setColorTheme(savedTheme);
 
   const tgt = document.querySelector("#toggle-theme");
+  const icon = tgt.querySelector("i");
+
+  icon.classList.remove(savedTheme !== "light"? "fa-moon" : "fa-sun");
+  icon.classList.add(savedTheme === "light"? "fa-moon" : "fa-sun");
+
   tgt.addEventListener("click", () => {
-    setColorTheme(getColorTheme() === "light" ? "dark" : "light");
-    const icon = tgt.querySelector("i");
-    icon.classList.remove("fa-moon");
-    icon.classList.add("fa-sun");
+    const current = getColorTheme();
+    setColorTheme(current === "light" ? "dark" : "light");
+    icon.classList.remove(current === "light"? "fa-moon" : "fa-sun");
+    icon.classList.add(current !== "light"? "fa-moon" : "fa-sun");
   });
 </script>
 
