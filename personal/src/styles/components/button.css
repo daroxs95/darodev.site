@@ -1,0 +1,16 @@
+button {
+  text-decoration: none;
+  color: var(--app-bg);
+  background-color: var(--color-text);
+  padding: calc(var(--v-gap) / 2) calc(var(--h-gap) / 2);
+  width: fit-content;
+  border: 1px solid transparent;
+  font-size: 1rem;
+}
+
+button:hover:not(:disabled) {
+  color: var(--color-text);
+  background-color: var(--app-bg);
+  border: 1px solid var(--color-text);
+  box-shadow: none;
+}

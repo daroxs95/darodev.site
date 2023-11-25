@@ -36,8 +36,8 @@ const posts = (await getCollection("blog"))
 
 <style>
   .blogsList {
-    gap: 20px;
-    padding: calc(4 * var(--h-gap)) 0;
+    gap: var(--h-gap);
+    padding: calc(var(--h-gap)) 0;
   }
   .blogsList li {
     list-style: none;

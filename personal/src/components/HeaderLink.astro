@@ -1,31 +1,34 @@
 ---
-import type { HTMLAttributes } from "astro/types";
+import type {HTMLAttributes} from "astro/types";
 
 type Props = HTMLAttributes<"a">;
 
-const { href, class: className, ...props } = Astro.props;
+const {href, class: className, ...props} = Astro.props;
 
-const { pathname } = Astro.url;
+const {pathname} = Astro.url;
 const isActive = href === pathname || href === pathname.replace(/\/$/, "");
 ---
 
 <a
   data-transition-page-link
   href={href}
-  class:list={["f-ai-center p-0", className, { active: isActive }]}
+  class:list={["f-ai-center", className, {active: isActive}]}
   {...props}
 >
-  <slot />
+  <slot/>
 </a>
+
 <style>
   a {
     display: inline-block;
     text-decoration: none;
     text-transform: uppercase;
-    font-weight: 300;
+    font-weight: 500;
+    font-size: 20px;
+    padding: calc(var(--v-gap) / 2) var(--h-gap);
   }
+
   a.active {
-    font-weight: 400;
-    /* text-decoration: underline; */
+    font-weight: 600;
   }
 </style>

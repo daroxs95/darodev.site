@@ -23,93 +23,101 @@ import { MY_NAME } from "../../consts";
   </head>
 
   <body>
-    <main>
-      <div class="profile-pic">
-        <img alt="" width="300" src="/cv.jpg" />
+    <main class="my-carousel">
+      <div class="carousel-content">
+        <div class="profile-pic slide">
+          <img alt="" width="300" src="/cv.jpg" />
+        </div>
+
+        <section class="about slide">
+          <div class="presentation">
+            <h1 class="name">{MY_NAME}</h1>
+            <p>
+              <b>Mathematician | Software Engineer</b>
+            </p>
+          </div>
+          <p>
+            Hi, mathematician here, really exited about technology, programming,
+            videogames, music and knowledge.
+          </p>
+          <p>
+            I am little introvert and with some issues to maintain focus, that
+            is why I have a lot of pet projects and ideas, to be able to be
+            constantly working on something.
+          </p>
+          <p>
+            When you get to know me, I am a lot of fun and an incredible fast
+            learner. If we are a match feel free to <a href="#contact"
+              >reach out</a
+            >.
+          </p>
+        </section>
+
+        <section class="cols-2 slide">
+          <h1>Experiences</h1>
+          <div class="experiences-container">
+            <div class="experiences-group">
+              <div class="experience">
+                <h3>Technical Leader</h3>
+                <h4>Tetraimpacts</h4>
+                <time datetime="2022-02">2/2022-present</time>
+              </div>
+              <div class="experience">
+                <h3>Frontend Developer</h3>
+                <h4>Crinnotech</h4>
+                <time datetime="2022-03">3/2022-3/2023</time>
+              </div>
+              <div class="experience">
+                <h3>React Native Developer</h3>
+                <h4>Sibucan</h4>
+                <time datetime="2022-06">6/2022-9/2022</time>
+              </div>
+            </div>
+
+            <div class="experiences-group">
+              <div class="experience">
+                <h3>C++ Developer</h3>
+                <h4>Potatobite</h4>
+                <time datetime="2021-01">1/2021-1/2022</time>
+              </div>
+              <div class="experience">
+                <h3>Frontend Developer</h3>
+                <h4>Kmada</h4>
+                <time datetime="2020-07">7/2020-1/2021</time>
+              </div>
+              <a
+                class="link-button"
+                target="_blank"
+                referrerpolicy="no-referrer"
+                href="https://www.linkedin.com/in/darian-lopez-utra/"
+                >Detailed LinkedIn CV</a
+              >
+            </div>
+          </div>
+        </section>
+
+        <section class="cols-2 slide">
+          <h1>Education</h1>
+          <div class="experiences-container">
+            <div class="experience">
+              <h3>Bachelor's degree, Mathematics</h3>
+              <h4>University of Havana</h4>
+              <time datetime="2014-09">9/2014-1/2021</time>
+            </div>
+            <div class="experience">
+              <h3>Master's degree, Frontend Development</h3>
+              <h4>HARBOUR.SPACE</h4>
+              <time datetime="2022-09">9/2022-present</time>
+            </div>
+          </div>
+        </section>
       </div>
 
-      <section class="about">
-        <div class="presentation">
-          <h1 class="name">{MY_NAME}</h1>
-          <p>
-            <b>Mathematician | Software Engineer</b>
-          </p>
-        </div>
-        <p>
-          Hi, mathematician here, really exited about technology, programming,
-          videogames, music and knowledge.
-        </p>
-        <p>
-          I am little introvert and with some issues to maintain focus, that is
-          why I have a lot of pet projects and ideas, to be able to be
-          constantly working on something.
-        </p>
-        <p>
-          When you get to know me, I am a lot of fun and an incredible fast
-          learner. If we are a match feel free to <a href="#contact"
-            >reach out</a
-          >.
-        </p>
-      </section>
-
-      <section class="cols-2">
-        <h1>Experiences</h1>
-        <div class="experiences-container">
-          <div class="experiences-group">
-            <div class="experience">
-              <h3>Technical Leader</h3>
-              <h4>Tetraimpacts</h4>
-              <time datetime="2022-02">2/2022-present</time>
-            </div>
-            <div class="experience">
-              <h3>Frontend Developer</h3>
-              <h4>Crinnotech</h4>
-              <time datetime="2022-03">3/2022-3/2023</time>
-            </div>
-            <div class="experience">
-              <h3>React Native Developer</h3>
-              <h4>Sibucan</h4>
-              <time datetime="2022-06">6/2022-9/2022</time>
-            </div>
-          </div>
-
-          <div class="experiences-group">
-            <div class="experience">
-              <h3>C++ Developer</h3>
-              <h4>Potatobite</h4>
-              <time datetime="2021-01">1/2021-1/2022</time>
-            </div>
-            <div class="experience">
-              <h3>Frontend Developer</h3>
-              <h4>Kmada</h4>
-              <time datetime="2020-07">7/2020-1/2021</time>
-            </div>
-            <a
-              class="link-button"
-              target="_blank"
-              referrerpolicy="no-referrer"
-              href="https://www.linkedin.com/in/darian-lopez-utra/"
-              >Detailed LinkedIn CV</a
-            >
-          </div>
-        </div>
-      </section>
-
-      <section class="cols-2">
-        <h1>Education</h1>
-        <div class="experiences-container">
-          <div class="experience">
-            <h3>Bachelor's degree, Mathematics</h3>
-            <h4>University of Havana</h4>
-            <time datetime="2014-09">9/2014-1/2021</time>
-          </div>
-          <div class="experience">
-            <h3>Master's degree, Frontend Development</h3>
-            <h4>HARBOUR.SPACE</h4>
-            <time datetime="2022-09">9/2022-present</time>
-          </div>
-        </div>
-      </section>
+      <div class="carousel-controls">
+        <button class="link-button prev">Prev</button>
+        <div class="pagination"></div>
+        <button class="link-button next">Next</button>
+      </div>
     </main>
 
     <Footer />
@@ -121,12 +129,7 @@ import { MY_NAME } from "../../consts";
       main {
         max-width: var(--max-width);
         margin: var(--v-gap) auto;
-        display: grid;
-        grid-template-columns: 1fr;
-        row-gap: calc(var(--v-gap) * 4);
         @media (width >= 768px) {
-          column-gap: var(--h-gap);
-          grid-template-columns: 1fr 1fr;
           margin: calc(var(--v-gap) * 4) auto;
         }
       }
@@ -285,11 +288,33 @@ import { MY_NAME } from "../../consts";
         border: 1px solid transparent;
       }
 
-      .link-button:hover {
+      .link-button:not(:disabled):hover {
         color: black;
         background-color: white;
         border: 1px solid black;
       }
+
+      .carousel-controls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: var(--h-gap);
+        margin-top: var(--v-gap);
+      }
     </style>
+    <script>
+      import { createCarousel } from "../../../decss/utils/carousel/index.mjs";
+
+      createCarousel({
+        carouselClass: "my-carousel",
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        type: "scroll",
+        loop: true,
+        swipe: true,
+        navigation: true,
+        pagination: true,
+      });
+    </script>
   </body>
 </html>

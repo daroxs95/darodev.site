@@ -7,12 +7,12 @@ import { SITE_TITLE } from "../consts";
   <nav class="f-ai-end f-jc-start p-0">
     <div class="hstack m-0">
       <HeaderLink class="home-link" href="/">
-        <span class="f-ai-center p-def site-title">
+        <span class="f-ai-center site-title">
           {SITE_TITLE}
         </span>
       </HeaderLink>
     </div>
-    <div class="hstack p-def f-jc-start m-0">
+    <div class="hstack f-jc-start m-0">
       <HeaderLink href="/blog">Blog</HeaderLink>
       <HeaderLink href="/portfolio">Portfolio</HeaderLink>
       <HeaderLink href="/about">About</HeaderLink>
@@ -20,22 +20,21 @@ import { SITE_TITLE } from "../consts";
     </div>
   </nav>
 </header>
+
 <style>
   header {
     padding: 2em 0 !important;
   }
-  h2 {
-    margin: 0 var(--h-gap);
-    padding-bottom: 0;
-  }
-  .links {
-    gap: var(--h-gap);
-  }
-  .home-link {
-    color: var(--color-text) !important;
-    text-decoration: none;
-  }
+
   .site-title {
     letter-spacing: 0.2em;
+  }
+
+  nav {
+    border-bottom-width: 5px;
+  }
+
+  nav div {
+    flex-wrap: wrap;
   }
 </style>

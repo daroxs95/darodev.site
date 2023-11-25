@@ -83,25 +83,20 @@ const {
 </div>
 
 <style>
-  footer {
-    padding: 25px;
-    text-align: center;
-  }
   img {
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     object-fit: cover;
     object-position: center center;
     height: 200px;
-    width: 300px;
+    width: 280px;
     filter: grayscale(100%);
     transition: filter 0.2s;
   }
-  .bcard a,
-  .bcard a:visited {
-    color: var(--color-text);
-  }
-  .bcard .description {
+  .description {
     max-width: 500px;
+  }
+  .card-image-anchor {
+
   }
   .card-image-anchor:hover > img {
     filter: grayscale(0%);

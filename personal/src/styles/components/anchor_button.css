@@ -1,0 +1,18 @@
+a {
+  color: var(--color-text);
+  transition: color 0.1s, background-color 0.1s;
+}
+
+a:hover {
+  color: var(--app-bg);
+  background-color: var(--color-text);
+  text-decoration: none;
+}
+
+a:hover:not([aria-disabled="true"]) {
+  text-decoration: none;
+}
+
+a:visited {
+  /*color: var(--app-bg);*/
+}

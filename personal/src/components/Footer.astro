@@ -1,29 +1,82 @@
 ---
-const today = new Date();
-import { MY_NAME, PERSONAL_GITHUB, PERSONAL_LINKEDIN } from "../consts";
+import {
+  MY_NAME,
+  PERSONAL_GITHUB,
+  PERSONAL_LINKEDIN,
+  SITE_MADE_IN_YEAR,
+  PERSONAL_EMAIL,
+  PERSONAL_INSTA,
+} from "../consts";
 ---
 
-<footer class="vstack">
-  <div class="hstack f-jc-center">
-    <a href={PERSONAL_GITHUB} target="_blank" title="Github">
-      <i class="fa-brands fa-github font-icon-button"></i>
-    </a>
-    <a href={PERSONAL_LINKEDIN} target="_blank" title="LinkedIn">
-      <i class="fa-brands fa-linkedin font-icon-button"></i>
-    </a>
-  </div>
-  <div class="legal">
-    &copy; {today.getFullYear()}
-    {MY_NAME}. Maybe some rights reserved.
+<footer>
+  <div class="footer-content">
+    <h2 id="contact">Contact</h2>
+    <div class="social">
+      <a href={`mailto:${PERSONAL_EMAIL}`}>{PERSONAL_EMAIL}</a>
+      <a target="_blank" referrerpolicy="no-referrer" href={PERSONAL_INSTA}
+        >Instagram</a
+      >
+      <a
+        target="
+        _blank"
+        referrerpolicy="no-referrer"
+        href={PERSONAL_LINKEDIN}>LinkedIn</a
+      >
+      <a target="_blank" referrerpolicy="no-referrer" href={PERSONAL_GITHUB}
+        >Github</a
+      >
+    </div>
+    <h4 style="text-align: center">
+      • Made with <span>❤</span> by
+      <a href={PERSONAL_GITHUB}>{MY_NAME}</a>
+      • {SITE_MADE_IN_YEAR} •
+    </h4>
   </div>
 </footer>
 
-<style>
+<style is:inline>
   footer {
-    padding: 40px 25px;
-    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 0;
   }
-  .font-icon-button {
-    font-size: 40px;
+
+  footer a {
+    text-decoration: underline;
+    color: white;
+    padding: 0;
+    &:visited {
+      color: white;
+    }
+  }
+
+  footer a:hover {
+    color: black;
+    background-color: white;
+  }
+
+  .footer-content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: calc(var(--v-gap) * 4) var(--h-gap);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: calc(var(--h-gap));
+  }
+
+  .social {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: calc(var(--h-gap) / 4);
+  }
+
+  .social a {
+    font-size: 25px;
+    padding: calc(var(--v-gap) / 2) var(--h-gap);
   }
 </style>
