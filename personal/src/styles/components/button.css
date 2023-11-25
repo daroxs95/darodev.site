@@ -6,6 +6,10 @@ button {
   width: fit-content;
   border: 1px solid transparent;
   font-size: 1rem;
+  transition: color var(--anim-duration) ease-in-out,
+  background-color var(--anim-duration) ease-in-out,
+  border var(--anim-duration) ease-in-out,
+  box-shadow var(--anim-duration) ease-in-out;
 }
 
 button:hover:not(:disabled) {

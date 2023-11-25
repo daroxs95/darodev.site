@@ -13,12 +13,12 @@ const posts = (await getCollection("blog"))
   <main class="main-content">
     <article>
       <!-- <section> -->
-      <ul class="blogsList f-jc-center f-wrap">
+      <ul class="blogsList f-jc-center f-column f-wrap">
         {
           posts.map((post) => (
             <li>
               <BlogCard
-                vertical
+                description={post.data.description}
                 date={post.data.pubDate}
                 title={post.data.title}
                 image={post.data.heroImage}

@@ -8,7 +8,7 @@ export interface Props {
   url?: string;
   web?: string;
   github?: string;
-  vertical?: boolean;
+  detailImg?: boolean;
   externUrl?: boolean;
   draft?: boolean;
   type?: "blog-post" | "app";
@@ -19,7 +19,7 @@ const {
   image = "/placeholder-about.jpg",
   date,
   url,
-  vertical = false,
+  detailImg = false,
   description,
   externUrl,
   type,
@@ -29,21 +29,12 @@ const {
 } = Astro.props;
 ---
 
-<div
-  class:list={[
-    "bcard comeFromBelow",
-    vertical ? "vstack w-min-content" : "hstack f-wrap",
-  ]}
->
-  <a
-    href={url}
-    class:list={["card-image-anchor p-0", !url && "no-pointer"]}
-    target={externUrl ? "_blank" : undefined}
-  >
-    <img src={image} />
-  </a>
-  <div>
-    <a data-transition-page-link class="p-0" href={url}>
+<div class="bcard comeFromBelow hstack f-wrap m-0">
+  <div class="time-col">
+    <FormattedDate date={date} />
+  </div>
+  <div class="details">
+    <a data-transition-page-link class="p-0 slide-bg-hover" href={url}>
       {
         type === "blog-post" && (
           <i class="fa fa-pencil-square-o card-type" title="Blog post" />
@@ -52,32 +43,45 @@ const {
       {type === "app" && <i class="fa fa-rocket card-type" title="App" />}
       {title}</a
     >
-    {draft && <span class="text-c-unfocus">DRAFT</span>}
     <br />
+    {draft && <span class="text-c-unfocus">DRAFT</span>}
     {description && <p class="description">{description}</p>}
-    <div class="date-links hstack">
-      <FormattedDate date={date} />
-      <div class="links hstack">
-        {
-          github && (
-            <a
-              data-transition-page-link
-              class="p-0"
-              href={github}
-              target="_blank"
-            >
-              <i class="fa-brands fa-github font-icon-button" title="Github" />
-            </a>
-          )
-        }
-        {
-          web && (
-            <a data-transition-page-link class="p-0" href={web} target="_blank">
-              <i class="fa-solid fa-globe font-icon-button" title="Website" />
-            </a>
-          )
-        }
-      </div>
+    {
+      detailImg && (
+        <a
+          href={url}
+          class:list={["card-image-anchor p-0", !url && "no-pointer"]}
+          target={externUrl ? "_blank" : undefined}
+        >
+          <img src={image} />
+        </a>
+      )
+    }
+    <div class="links hstack">
+      {
+        github && (
+          <a
+            data-transition-page-link
+            class="p-0 external-link"
+            href={github}
+            target="_blank"
+          >
+            <i class="fa-brands fa-github font-icon-button" title="Github" />
+          </a>
+        )
+      }
+      {
+        web && (
+          <a
+            data-transition-page-link
+            class="p-0 external-link"
+            href={web}
+            target="_blank"
+          >
+            <i class="fa-solid fa-globe font-icon-button" title="Website" />
+          </a>
+        )
+      }
     </div>
   </div>
 </div>
@@ -92,15 +96,18 @@ const {
     filter: grayscale(100%);
     transition: filter 0.2s;
   }
+
   .description {
     max-width: 500px;
   }
-  .card-image-anchor {
 
+  .card-image-anchor {
   }
+
   .card-image-anchor:hover > img {
     filter: grayscale(0%);
   }
+
   .no-pointer {
     cursor: default !important;
   }
@@ -110,7 +117,25 @@ const {
     margin-right: 2px;
   }
 
-  .date-links {
-    gap: 50px !important;
+  .details {
+    //gap: calc(var(--v-gap) / 2);
+  }
+
+  .time-col {
+    width: 100px;
+    @media (width >= 768px) {
+      text-align: right;
+    }
+  }
+
+  a.external-link:hover {
+    background-color: transparent;
+  }
+  a.external-link > i {
+    transition: all var(--anim-duration) ease-in-out;
+  }
+  a.external-link:hover > i {
+    transform: scale(1.7);
+    color: var(--color-text) !important;
   }
 </style>

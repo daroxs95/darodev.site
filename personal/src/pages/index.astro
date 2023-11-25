@@ -1,6 +1,6 @@
 ---
-import { SITE_TITLE, PRODUCTS_PAGE_DESCRIPTION } from "../consts";
-import { getCollection } from "astro:content";
+import {SITE_TITLE, PRODUCTS_PAGE_DESCRIPTION} from "../consts";
+import {getCollection} from "astro:content";
 import BlogCard from "../components/BlogCard.astro";
 import Base from "../layouts/Base.astro";
 
@@ -20,12 +20,12 @@ const products = (await getCollection("product"))
   <main class="main-content">
     <article>
       <!-- <section> -->
-      <ul class="blogsList f-jc-center f-wrap">
+      <ul class="blogsList f-jc-center f-column f-wrap">
         {
           posts.map((post) => (
             <li>
               <BlogCard
-                vertical
+                description={post.data.description}
                 date={post.data.pubDate}
                 title={post.data.title}
                 image={post.data.heroImage}
@@ -40,7 +40,7 @@ const products = (await getCollection("product"))
           products.map((product) => (
             <li>
               <BlogCard
-                vertical
+                description={product.data.description}
                 date={product.data.pubDate}
                 title={product.data.title}
                 image={product.data.heroImage}
@@ -52,7 +52,6 @@ const products = (await getCollection("product"))
                 externUrl={!product.data.showDetailPage}
                 github={product.data.github}
                 web={product.data.web}
-                description=""
                 type="app"
                 draft={product.data.draft}
               />
@@ -70,6 +69,7 @@ const products = (await getCollection("product"))
     gap: 20px;
     padding: calc(var(--h-gap)) 0;
   }
+
   .blogsList li {
     list-style: none;
   }

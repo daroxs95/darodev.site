@@ -1,0 +1,43 @@
+a {
+  color: var(--color-text);
+  transition: color var(--anim-duration), background-color var(--anim-duration);
+}
+
+a:hover {
+  color: var(--app-bg);
+  background-color: var(--color-text);
+  text-decoration: none;
+}
+
+a:hover:not([aria-disabled="true"]) {
+  text-decoration: none;
+}
+
+a:visited {
+  /*color: var(--app-bg);*/
+}
+
+.slide-bg-hover {
+  margin-bottom: calc(var(--v-gap) / 2);
+  padding-bottom: 0;
+  line-height: 150%;
+  position: relative;
+  background-image: linear-gradient(
+      90deg,
+      var(--color-text) 50%,
+      var(--app-bg) 50%
+  );
+  background-size: 210% auto;
+  background-position: 100%;
+  background-repeat: no-repeat;
+  width: fit-content;
+
+  transition-property: background-position, color;
+  transition-duration: var(--anim-duration);
+  transition-delay: 0s;
+}
+
+.slide-bg-hover:hover {
+  color: var(--app-bg);
+  background-position: 0%;
+}

@@ -5,56 +5,56 @@ import BlogCard from "../../components/BlogCard.astro";
 import Base from "../../layouts/Base.astro";
 
 const products = (await getCollection("product"))
-    .filter((post) => import.meta.env.DEV || !post.data.draft)
-    .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+  .filter((post) => import.meta.env.DEV || !post.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
 <Base
-        keywords=""
-        title={`${SITE_TITLE} | Portfolio`}
-        description={PRODUCTS_PAGE_DESCRIPTION}
+  keywords=""
+  title={`${SITE_TITLE} | Portfolio`}
+  description={PRODUCTS_PAGE_DESCRIPTION}
 >
-    <main class="main-content">
-        <article>
-            <!-- <section> -->
-            <ul class="blogsList">
-                {
-                    products.map((product) => (
-                            <li>
-                                <BlogCard
-                                        date={product.data.pubDate}
-                                        title={product.data.title}
-                                        image={product.data.heroImage}
-                                        url={
-                                            product.data.showDetailPage
-                                                ? `/portfolio/${product.slug}/`
-                                                : product.data.web
-                                        }
-                                        externUrl={!product.data.showDetailPage}
-                                        github={product.data.github}
-                                        web={product.data.web}
-                                        description={product.data.description}
-                                        draft={product.data.draft}
-                                />
-                            </li>
-                    ))
+  <main class="main-content">
+    <article>
+      <!-- <section> -->
+      <ul class="blogsList">
+        {
+          products.map((product) => (
+            <li>
+              <BlogCard
+                date={product.data.pubDate}
+                title={product.data.title}
+                image={product.data.heroImage}
+                url={
+                  product.data.showDetailPage
+                    ? `/portfolio/${product.slug}/`
+                    : product.data.web
                 }
-            </ul>
-            <!-- </section> -->
-        </article>
-    </main>
+                externUrl={!product.data.showDetailPage}
+                github={product.data.github}
+                web={product.data.web}
+                description={product.data.description}
+                draft={product.data.draft}
+              />
+            </li>
+          ))
+        }
+      </ul>
+      <!-- </section> -->
+    </article>
+  </main>
 </Base>
 
 <style>
-    .blogsList {
-        display: flex;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        gap: var(--h-gap);
-        padding: calc(var(--h-gap)) 0;
-    }
+  .blogsList {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: var(--h-gap);
+    padding: calc(var(--h-gap)) 0;
+  }
 
-    .blogsList li {
-        list-style: none;
-    }
+  .blogsList li {
+    list-style: none;
+  }
 </style>

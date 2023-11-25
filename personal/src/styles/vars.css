@@ -1,54 +1,60 @@
 :root {
-    --max-width: 1024px;
+  --max-width: 1024px;
 
-    --color-primary-light: var(--color-bg-dark);
-    --color-primary: var(--color-bg-dark);
-    --color-primary-dark: var(--color-bg-dark);
-    --color-primary-complement: #00b365;
+  --color-primary-light: var(--color-bg-dark);
+  --color-primary: var(--color-bg-dark);
+  --color-primary-dark: var(--color-bg-dark);
+  --color-primary-complement: #00b365;
 
-    /* DECSS */
-    --app-bg: var(--color-bg-light);
-    --app-bg-light: var(--color-bg-10);
-    --app-bg-dark: var(--color-bg-dark);
+  /* DECSS */
+  --app-bg: var(--color-bg-light);
+  --app-bg-light: var(--color-bg-10);
+  --app-bg-dark: var(--color-bg-dark);
 
-    --color-text: var(--color-bg-dark);
-    --color-text-heading: var(--color-bg-dark);
-    --color-text-subtle: var(--color-bg-dark);
+  --color-text: var(--color-bg-dark);
+  --color-text-heading: var(--color-bg-dark);
+  --color-text-subtle: var(--color-bg-dark);
 
-    --color-text-hover: var(--color-bg-6);
-    --color-text-active: var(--color-bg-dark);
-    --color-text-shadow: var(--color-bg-10);
+  --color-text-hover: var(--color-bg-6);
+  --color-text-active: var(--color-bg-dark);
+  --color-text-shadow: var(--color-bg-10);
 
-    --border-radius: 0px;
+  --btn-primary-label: var(--color-bg-dark);
+  --btn-primary-hover: var(--color-bg-light);
 
+  --border-radius: 0px;
+  --anim-duration: 0.1s;
+
+  --h-gap: 20px;
+  --h-gap-l: 20px;
+  --v-gap: 20px;
+  --v-gap-l: 20px;
+
+  @media (width >= 768px) {
     --h-gap: 20px;
-    --h-gap-l: 20px;
     --v-gap: 20px;
-    --v-gap-l: 20px;
-
-    @media (width >= 768px) {
-        --h-gap: 20px;
-        --v-gap: 20px;
-    }
+  }
 }
 
 @media (prefers-color-scheme: dark) {
-    :root {
-        --color-primary-light: var(--color-bg-light);
-        --color-primary: var(--color-bg-light);
-        --color-primary-dark: var(--color-bg-light);
+  :root {
+    --color-primary-light: var(--color-bg-light);
+    --color-primary: var(--color-bg-light);
+    --color-primary-dark: var(--color-bg-light);
+    --btn-primary-label: var(--color-bg-light);
+    --btn-primary-hover: var(--color-bg-dark);
 
-        /* DECSS */
-        --app-bg: var(--color-bg-dark);
-        --app-bg-light: var(--color-bg-2);
-        --app-bg-dark: var(--color-bg-5);
+    /* DECSS */
+    --app-bg: var(--color-bg-dark);
+    --app-bg-light: var(--color-bg-2);
+    --app-bg-dark: var(--color-bg-5);
 
-        --color-text: var(--color-bg-light);
-        --color-text-heading: var(--color-bg-light);
-        --color-text-subtle: var(--color-bg-light);
+    --color-text: var(--color-bg-light);
+    --color-text-heading: var(--color-bg-light);
+    --color-text-subtle: var(--color-bg-light);
 
-        --color-text-hover: var(--color-bg-2);
-        --color-text-active: var(--color-bg-light);
-        --color-text-shadow: var(--color-bg-1);
-    }
+    --color-text-hover: var(--color-bg-2);
+    --color-text-active: var(--color-bg-light);
+    --color-text-shadow: var(--color-bg-1);
+  }
 }
