@@ -1,20 +1,16 @@
-a {
+a, .a {
   color: var(--color-text);
   transition: color var(--anim-duration), background-color var(--anim-duration);
 }
 
-a:hover {
+a:hover, .a:hover {
   color: var(--app-bg);
   background-color: var(--color-text);
   text-decoration: none;
 }
 
-a:hover:not([aria-disabled="true"]) {
+a:hover:not([aria-disabled="true"]), .a:hover:not([aria-disabled="true"]) {
   text-decoration: none;
-}
-
-a:visited {
-  /*color: var(--app-bg);*/
 }
 
 .slide-bg-hover {

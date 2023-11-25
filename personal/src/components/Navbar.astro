@@ -18,8 +18,28 @@ import { SITE_TITLE } from "../consts";
       <HeaderLink href="/about">About</HeaderLink>
       <!-- <HeaderLink href="https://twitter.com/astrodotbuild" target="_blank">Twitter</HeaderLink> -->
     </div>
+    <span id="toggle-theme" class="a">
+      <i class="fa-solid fa-moon sfont-icon-button" title="Toggle theme"></i>
+    </span>
   </nav>
 </header>
+
+<script>
+  import {
+    setColorTheme,
+    getColorTheme,
+  } from "../../decss/utils/theme_loader.mjs";
+
+  setColorTheme(getColorTheme());
+
+  const tgt = document.querySelector("#toggle-theme");
+  tgt.addEventListener("click", () => {
+    setColorTheme(getColorTheme() === "light" ? "dark" : "light");
+    const icon = tgt.querySelector("i");
+    icon.classList.remove("fa-moon");
+    icon.classList.add("fa-sun");
+  });
+</script>
 
 <style>
   header {
@@ -36,5 +56,14 @@ import { SITE_TITLE } from "../consts";
 
   nav div {
     flex-wrap: wrap;
+  }
+
+  button {
+    background-color: transparent !important;
+  }
+
+  #toggle-theme {
+    margin-left: auto;
+    padding: calc(var(--v-gap) / 2) var(--h-gap);
   }
 </style>
