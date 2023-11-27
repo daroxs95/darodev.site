@@ -12,7 +12,7 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, "");
 <a
   data-transition-page-link
   href={href}
-  class:list={["f-ai-center", className, {active: isActive}]}
+  class:list={["f-ai-center slide-bg-hover-up", className, {active: isActive}]}
   {...props}
 >
   <slot/>

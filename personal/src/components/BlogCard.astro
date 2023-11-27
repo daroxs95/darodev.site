@@ -34,7 +34,7 @@ const {
     <FormattedDate date={date} />
   </div>
   <div class="details">
-    <a data-transition-page-link class="p-0 slide-bg-hover" href={url}>
+    <a data-transition-page-link class="slide-bg-hover" href={url}>
       {
         type === "blog-post" && (
           <i class="fa fa-pencil-square-o card-type" title="Blog post" />
@@ -128,12 +128,19 @@ const {
     }
   }
 
+  a {
+    padding: 0 calc(var(--h-gap) / 2);
+    margin-left: calc(var(--h-gap) / -2);
+  }
+
   a.external-link:hover {
     background-color: transparent;
   }
+
   a.external-link > i {
     transition: all var(--anim-duration) ease-in-out;
   }
+
   a.external-link:hover > i {
     transform: scale(1.7);
     color: var(--color-text) !important;

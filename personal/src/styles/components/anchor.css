@@ -37,3 +37,17 @@ a:hover:not([aria-disabled="true"]), .a:hover:not([aria-disabled="true"]) {
   color: var(--app-bg);
   background-position: 0%;
 }
+
+.slide-bg-hover-up {
+  transition-property: opacity, background-size;
+  transition-duration: var(--anim-duration);
+  transition-timing-function: var(--cool-easing);
+  background-image: linear-gradient(var(--color-text) 0 0);
+  background-size: 100% 0;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-color: transparent !important;
+}
+.slide-bg-hover-up:hover {
+  background-size: 100% 100%;
+}
