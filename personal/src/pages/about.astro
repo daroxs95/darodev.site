@@ -9,7 +9,6 @@ import Base from "../layouts/Base.astro";
   <main class="main-content">
     <article class="about-content-wrapper comeFromBelow f-wrap">
       <div class="two-columns">
-        <img src="/placeholder-about.jpg" />
         <div>
           <h1>👻 Greetings to the fellow geeks</h1>
           <p>
@@ -28,11 +27,12 @@ import Base from "../layouts/Base.astro";
             something involves getting things done and "reinvent the wheel" in
             equal parts.
           </p>
-          <br/>
+          <br />
           <a class="m-auto" href="/cv" target="_blank">
             <button> View more</button>
           </a>
         </div>
+        <img alt="" class="profile-pic" src="/placeholder-about.jpg" />
         <section>
           <Influences />
         </section>
@@ -81,6 +81,7 @@ import Base from "../layouts/Base.astro";
   }
 
   .profile-pic {
+    grid-row: 1;
     @media (width >= 768px) {
       grid-column: 2;
     }
@@ -94,7 +95,7 @@ import Base from "../layouts/Base.astro";
     max-height: 485px;
     box-shadow: black 0 calc(var(--h-gap) / 4);
     @media (width >= 768px) {
-      box-shadow: black calc(-1 * var(--h-gap) / 4) calc(var(--h-gap) / 4);
+      box-shadow: black calc(1 * var(--h-gap) / 4) calc(var(--h-gap) / 4);
     }
   }
 

@@ -2,7 +2,7 @@
   --cool-easing: cubic-bezier(0.075, 0.82, 0.165, 1);
   --ease-wiggle: cubic-bezier(0.74, -0.6, 0.225, 1.59);
 
-  --max-width: 1024px;
+  --max-width: 940px;
 
   --color-primary-light: var(--color-bg-dark);
   --color-primary: var(--color-bg-dark);
