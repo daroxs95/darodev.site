@@ -3,7 +3,7 @@ title: "Load firebase and forget"
 description: "How to load firebase without fear"
 pubDate: "April 04 2023"
 keywords: "firebase, typescript"
-heroImage: "/firebase-hero.png"
+#heroImage: "/firebase-hero.png"
 draft: false
 ---
 

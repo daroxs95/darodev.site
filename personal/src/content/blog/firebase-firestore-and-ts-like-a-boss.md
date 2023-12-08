@@ -3,7 +3,7 @@ title: "Firestore and Typescript like a Boss"
 description: "Opinionated firestore and typescript setup aiding types for communication"
 pubDate: "April 04 2023"
 keywords: "firestore, firebase, typescript"
-heroImage: "/firebase-hero.png"
+#heroImage: "/firebase-hero.png"
 ---
 
 Starting web development and getting to know the web ecosystem could be a really cumbersome and tiring task. Then you start hearing about firebase and firestore as a "backend" solution and people advertising themselves and using firebase as a valuable skill (and it really is). So you went down that road, and if like me, there is always the hate of avoidable runtime errors, you overuse typescript. So here is a really basic and opinionated config to use firestore(web version 9, modular) and typescript with low boilerplate code levels and "strongly" typing the objects and communication with "backend", thanks [withConverter](https://firebase.google.com/docs/reference/js/firestore_.firestoredataconverter).

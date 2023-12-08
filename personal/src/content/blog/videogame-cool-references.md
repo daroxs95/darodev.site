@@ -3,7 +3,7 @@ title: "Videogames cool references"
 description: "Some videogame cool references that caught my eyes"
 pubDate: "April 04 2023"
 keywords: "videogames, easter eggs, references"
-heroImage: "/mass-effect-shepard-armor_771780223.jpg"
+#heroImage: "/mass-effect-shepard-armor_771780223.jpg"
 ---
 
 Greetings to the hardcore gamers, and the ones that do not have the time anymore 😭, and also to the casuals, basically to everybody.

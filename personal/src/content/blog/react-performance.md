@@ -3,7 +3,7 @@ title: "React performance traps"
 description: "List of uncommon or ignored react performance traps and how to avoid them"
 pubDate: "September 15 2023"
 keywords: "react, performance, typescript, javascript, hooks"
-heroImage: "/react.png"
+#heroImage: "/react.png"
 draft: false
 ---
 
@@ -17,7 +17,7 @@ The following snippet causes the app to halt for a few seconds:
 ```typescript
 useEffect(() => {
   const r = /(g|i+)+t/;
-  "giiiiiiiiiiiiiiiv".search(r);
+  "giiiiiiiiiiiiiiiiiiiiiiiiv".search(r);
 }, []);
 ```
 

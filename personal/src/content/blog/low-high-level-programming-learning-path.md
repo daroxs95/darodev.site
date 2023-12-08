@@ -3,7 +3,7 @@ title: "Low/high level: programming learning path"
 description: '"Which is and why" my preferred programming learning path'
 pubDate: "Jun 27 2023"
 keywords: "c, cplusplus, c++, clang, programming, javascript, web, learning, python, low level, abstraction"
-heroImage: "/cpp-c-js-py.png"
+#heroImage: "/cpp-c-js-py.png"
 ---
 
 Not so long ago, someone ask me what would be the best way of learning to code, and the which programming language to choose.

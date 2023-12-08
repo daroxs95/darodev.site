@@ -3,7 +3,7 @@ title: "Let's try email rendering in Next.js"
 description: "Next.js, styled-components and SSR to email templating and sending newsletters"
 pubDate: "April 13 2023"
 keywords: "nextjs, react, styled-components, email, SSR, html, nodemailer"
-heroImage: "/nextjs.jpg"
+#heroImage: "/nextjs.jpg"
 ---
 
 Sometimes we need to send personalized emails and have some prettiness as requirements.
